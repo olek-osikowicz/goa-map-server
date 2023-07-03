@@ -1,9 +1,8 @@
-
 # Specify the directory containing the SVG files
-DIRECTORY="renders/barcelona"
+DIRECTORY="renders/nyc"
 cd "$DIRECTORY"
 
 
-inkscape --export-type=pdf *.svg
-mkdir -p pdf
-mv *.pdf pdf/
+inkscape --export-type=png svg/*.svg
+mkdir -p png
+mv svg/*.png png/

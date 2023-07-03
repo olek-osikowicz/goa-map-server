@@ -3,11 +3,12 @@ import os
 import json
 from pathlib import Path
 import logging as log
+import subprocess
 import drawsvg as dw
-from drawer import drawAreas, drawWays
-
-from fetcher import Fetcher
-from recolorer import recolour
+from goamapper.drawer import drawAreas, drawWays
+import cairosvg
+from goamapper.fetcher import Fetcher
+from goamapper.recolorer import recolour
 
 CONFIG_DIR = Path("config")
 RENDERS_DIR = Path("renders")
@@ -20,26 +21,34 @@ class Generator():
         self.teplate_params = config['template']
         self.map_layers_params = config['map_layers']
 
-        self.dir_path = RENDERS_DIR / self.place_name
-        self.dir_path.mkdir(exist_ok=True) #ensure directory exists
-
-        self.file_path = self.dir_path / f"{self.theme_name}.svg"
+        self.prepare_folders()
 
         #only used if generating from scratch
         self.fetcher = None
         self.map_content = None
         self.template = None
 
+    def prepare_folders(self):
+        dir_path = RENDERS_DIR / self.place_name
+        dir_path.mkdir(exist_ok=True) #ensure directory exists
+
+        svg_dir_path = dir_path / 'svg'
+        svg_dir_path.mkdir(exist_ok=True)
+        self.svg_file_path = svg_dir_path / f"{self.theme_name}.svg"
+        
+        png_dir_path = dir_path / 'png'
+        png_dir_path.mkdir(exist_ok=True)
+        self.png_file_path = png_dir_path / f"{self.theme_name}.png"
+
     def generate(self):
 
-        if self.file_path.exists():
-            log.debug(f"{self.place_name} in {self.theme_name} already exists")
-        elif any(self.dir_path.iterdir()):
-            log.info(f"{self.place_name} but in diffrent theme")
-            recolour(self.dir_path, self.theme_name, self.map_layers_params, self.teplate_params)
+        log.debug(f"Generating {self.place_name} in {self.theme_name}")
+        if self.svg_file_path.exists():
+            log.info(f"{self.place_name} in {self.theme_name} already exists")
         else:
             log.info(f"{self.place_name} in {self.theme_name} doenst exist yet")
             self.generate_from_scratch()
+
 
 
     def _calculate_dimentions(self):
@@ -86,14 +95,18 @@ class Generator():
         # TEXTS
         text_area = dw.Group(id='text_area')
 
-        text_x = self.frame_dims[0]
+        
+        text_x = self.map_space_dims[0]
         #height of frame
-        text_y = 2*self.frame_dims[1] + self.frame_dims[3] + p['main_text']['y_offset']
+        text_y = p['height'] - p['bottom_area_height'] + p['main_text']['y_offset']
+        log.debug(f"Main text: {text_x=}, {text_y=}")
+        text_area.append(dw.Text(p['main_text']['text'], font_size=p['main_text']['font_size'], x=text_x, y=text_y, id='main_text', fill=p['main_text']['fill'], font_family=p['main_text']['font_family'], dominant_baseline='hanging'))
 
-        text_area.append(dw.Text(p['main_text']['text'], font_size=p['main_text']['font_size'], x=text_x, y=text_y, id='main_text', fill=p['main_text']['fill']))
-
-        text_y += p['sub_text']['y_offset']
-        text_area.append(dw.Text(p['sub_text']['text'], font_size=p['sub_text']['font_size'], x=text_x, y=text_y, id='sub_text', fill=p['sub_text']['fill']))
+        if 'sub_text' in p:
+            text_y += p['sub_text']['y_offset']
+            
+            log.debug(f"Sub text: {text_x=}, {text_y=}")
+            text_area.append(dw.Text(p['sub_text']['text'], font_size=p['sub_text']['font_size'], x=text_x, y=text_y, id='sub_text', fill=p['sub_text']['fill'], font_family=p['sub_text']['font_family'], dominant_baseline='hanging'))
 
         
         # CREATE TEMPLATE AND APPEND
@@ -150,18 +163,22 @@ class Generator():
         d.append(self.map_content)
         d.append(self.template)
 
-        d.save_svg(self.file_path)
+        d.save_svg(self.svg_file_path)
+        log.debug("SVG saved")
+        # d.save_png(self.png_file_path.__str__())
+        # log.debug("PNG saved")
 
         log.info("Map saved")
 
 def main():
-    for config_file in os.listdir(CONFIG_DIR):
 
-        with open(CONFIG_DIR / config_file) as file:
-            data = json.load(file)
-        Generator(data).generate()
+    for file in CONFIG_DIR.glob('**/*'):
+        if file.is_file():
+            with open(file) as file:
+                data = json.load(file)
+            Generator(data).generate()
 
 
 if __name__ == "__main__":
-    log.basicConfig(format='%(levelname)s:%(asctime)s: %(message)s',level=log.INFO)
+    log.basicConfig(format='%(levelname)s:%(asctime)s: %(message)s',level=log.DEBUG)
     main()
