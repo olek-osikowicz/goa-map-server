@@ -1,0 +1,103 @@
+{
+    "place_bbox": [
+        2.092325,
+        41.327686,
+        2.242389,
+        41.454932
+    ],
+    "place_name": "barcelona",
+    "theme_name": "Subtle Elegance - Soft Rose, Mint Green, and Pale Green",
+    "template": {
+        "width": 3300,
+        "height": 4950,
+        "background_fill": "#D3D3D3",
+        "map_frame": {
+            "fill": "#FFB6C1",
+            "offset": 30,
+            "width": 2
+        },
+        "bottom_area_height": 150,
+        "main_text": {
+            "y_offset": 20,
+            "text": "Your Place Name",
+            "font_size": 80,
+            "font_family": "Arial",
+            "fill": "#000000"
+        },
+        "sub_text": {
+            "y_offset": 60,
+            "text": "Subtle Elegance - Soft Rose, Mint Green, and Pale Green",
+            "font_size": 48,
+            "font_family": "Arial",
+            "fill": "#000000"
+        }
+    },
+    "map_layers": {
+        "land": {
+            "fill": "#FFB6C1"
+        },
+        "water": {
+            "fill": "#99DE99"
+        },
+        "green": {
+            "fill": "#FFD4E6",
+            "tags": {
+                "leisure": "park",
+                "landuse": "forest"
+            }
+        },
+        "streets": {
+            "base_width": 1.5,
+            "types": {
+                "footway": {
+                    "stroke": "#F5F5F5",
+                    "relative_width": 1
+                },
+                "pedestrian": {
+                    "stroke": "#F5F5F5",
+                    "relative_width": 1.2
+                },
+                "unclassified": {
+                    "stroke": "#FF69B4",
+                    "relative_width": 1.4
+                },
+                "service": {
+                    "stroke": "#FFB6C1",
+                    "relative_width": 1
+                },
+                "living_street": {
+                    "stroke": "#F5F5F5",
+                    "relative_width": 1.3
+                },
+                "residential": {
+                    "stroke": "#FFC0CB",
+                    "relative_width": 1.5
+                },
+                "cycleway": {
+                    "stroke": "#F2F2F2",
+                    "relative_width": 1.2
+                },
+                "tertiary": {
+                    "stroke": "#F5F5F5",
+                    "relative_width": 1.4
+                },
+                "secondary": {
+                    "stroke": "#F5F5F5",
+                    "relative_width": 1.4
+                },
+                "primary": {
+                    "stroke": "#F2F2F2",
+                    "relative_width": 1.6
+                },
+                "trunk": {
+                    "stroke": "#F5F5F5",
+                    "relative_width": 1.4
+                },
+                "motorway": {
+                    "stroke": "#F5F5F5",
+                    "relative_width": 1.4
+                }
+            }
+        }
+    }
+}

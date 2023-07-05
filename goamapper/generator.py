@@ -161,7 +161,8 @@ class Generator():
                                   id='water', fill=layer_info['fill'])
                     )
                 case "streets":  # streets and other ways
-                    gdf = self.fetcher.get_streetsGDF()
+                    street_types = list(layer_info['types'].keys())
+                    gdf = self.fetcher.get_streetsGDF(street_types)
                     self.map_content.append(
                         drawWays(gdf, layer_info, id=layer_name))
 

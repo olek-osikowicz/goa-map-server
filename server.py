@@ -37,15 +37,18 @@ def root():
 async def file(request: Request):
     # await asyncio.sleep(5)
     body = await request.json()
-    if body is str:
+    
+    if isinstance(body, str):
         body = json.loads(body)
-        
+
+    log.debug(f"{type(body) = }")   
     assert isinstance(body, dict), "Body is not dict"
     log.debug(f"{body = }")
 
     g = Generator(body)
     g.generate_svg()
-    IMAGE_MAX_SIZE = 1200 #px
+    IMAGE_MAX_SIZE = 1000 #px
     g.save_png(max_size=IMAGE_MAX_SIZE)
     data = png2base64(g.png_file_path)
     return {"data": data}
+    # return FileResponse(path=g.png_file_path)

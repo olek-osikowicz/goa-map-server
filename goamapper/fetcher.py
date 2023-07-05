@@ -82,8 +82,13 @@ class Fetcher():
         return gdf
 
     def get_osmGDF(self, tags, scale=True):
-        osm_gdf = ox.geometries_from_polygon(
-            self.bbox_pol, tags={tags: True} if type(tags) == str else tags)
+
+        try:
+            osm_gdf = ox.geometries_from_polygon(
+                self.bbox_pol, tags=tags)
+        except Exception:
+            #return empty geometry if something goes wrong
+            return gpd.GeoSeries([])
 
         osm_gdf = self.transformGDF(osm_gdf)
 
@@ -122,12 +127,11 @@ class Fetcher():
         #no scaling as we are not done transforming yet
         inland_water_gdf = self.get_osmGDF(WATER_TAGS, scale=False)
         log.debug("Inland water retrieved")
-
-        if sea_water_gdf.empty:
-            log.debug("Sea water is empty, only inland water avalable")
             
-
-        gdf = pd.concat([inland_water_gdf, sea_water_gdf])
+        if inland_water_gdf.empty:
+            gdf = sea_water_gdf
+        else:
+            gdf = pd.concat([inland_water_gdf, sea_water_gdf])
 
         log.debug("Appended")
         gdf = self.mergeGeometries(gdf)
@@ -138,9 +142,10 @@ class Fetcher():
 
         return gdf
 
-    def get_streetsGDF(self):
+    def get_streetsGDF(self, street_types: list):
 
-        gdf = ox.geometries_from_polygon(self.bbox_pol, tags={"highway": True})
+        tags = {"highway": street_types}
+        gdf = ox.geometries_from_polygon(self.bbox_pol, tags=tags)
 
         def unpack_lists(highway_type):
             if isinstance(highway_type, str):
@@ -163,6 +168,4 @@ class Fetcher():
 
 if __name__ == "__main__":
 
-    f = Fetcher(bbox_cords=[4.4525568, 51.8582984, 4.5445646, 51.9585962])
-    x = f.getWaterGDF()
-    log.debug(x)
+    pass
