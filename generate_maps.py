@@ -3,21 +3,26 @@ import json
 from goamapper.generator import Generator
 import logging as log
 from pathlib import Path
+from multiprocessing import Pool
 
 CONFIG_DIR = Path("config")
 
+def generate_from_file(path: Path):
+    with open(path) as file:
+        data = json.load(file)
+
+    g = Generator(data)
+    g.generate_svg()
+    g.save_png()
+
+
 def main():
-
-    for file in CONFIG_DIR.glob('**/*'):
-        if file.is_file():
-            with open(file) as file:
-                data = json.load(file)
-
-            g = Generator(data)
-            g.generate_svg()
-            g.save_png()
+    paths = [p for p in CONFIG_DIR.glob('**/*') if p.is_file()]
+    with Pool() as pool:
+        pool.map(generate_from_file, paths)
 
 
 if __name__ == "__main__":
+
     log.basicConfig(format='%(levelname)s:%(asctime)s: %(message)s',level=log.DEBUG)
-    main()
+    main() 
