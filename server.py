@@ -5,6 +5,7 @@ from fastapi.responses import FileResponse, HTMLResponse
 import base64
 import asyncio
 from goamapper.generator import Generator
+from goamapper.models import Poster
 import logging as log
 import json
 from pydantic import BaseModel
@@ -39,31 +40,12 @@ def png2base64(path):
 def root():
     return {'data': "Hello World"}
 
-# class Config(BaseModel):
-#     place_bbox: list
-#     theme_name: str
-#     place_name: str
-#     template: dict
-#     map_layers: dict
-
-
 
 @app.post("/png")
-async def file(req: Request):
-    # await asyncio.sleep(5)
-    # body = await request.json()
-    
-    # if isinstance(body, str):
-    #     body = json.loads(body)
+async def file(p: Poster):
 
-
-    body = await req.json()
-    log.debug(f"{type(body) = }")   
-    assert isinstance(body, dict), "Body is not dict"
-    log.debug(f"{body = }")
-
-    
-    g = Generator(body)
+    # return {"msg": f"{p}"}
+    g = Generator(p)
     g.generate_svg()
     IMAGE_MAX_SIZE = 1000 #px
     g.save_png(max_size=IMAGE_MAX_SIZE)
