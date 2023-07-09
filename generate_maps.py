@@ -1,6 +1,7 @@
 import os
 import json
 from goamapper.generator import Generator
+from goamapper.models import Poster
 import logging as log
 from pathlib import Path
 from multiprocessing import Pool
@@ -11,7 +12,8 @@ def generate_from_file(path: Path):
     with open(path) as file:
         data = json.load(file)
 
-    g = Generator(data)
+    p = Poster(**data)
+    g = Generator(p)
     g.generate_svg()
     g.save_png()
 

@@ -5,6 +5,7 @@ import subprocess
 import drawsvg as dw
 from goamapper.drawer import drawAreas, drawWays
 import cairosvg
+from goamapper.models import Poster
 from goamapper.fetcher import Fetcher
 from goamapper.recolorer import recolour
 
@@ -12,12 +13,11 @@ RENDERS_DIR = Path("renders")
 
 
 class Generator():
-    def __init__(self, config: dict) -> None:
-        self.bbox = config['place_bbox']
-        self.place_name = config['place_name']
-        self.theme_name = config['theme_name']
-        self.teplate_params = config['template']
-        self.map_layers_params = config['map_layers']
+    def __init__(self, poster: Poster) -> None:
+        self.poster = poster
+        
+        # self.teplate_params = config['template']
+        # self.map_layers_params = config['map_layers']
 
         self.prepare_folders()
 
@@ -27,24 +27,24 @@ class Generator():
         self.template = None
 
     def prepare_folders(self):
-        dir_path = RENDERS_DIR / self.place_name
+        dir_path = RENDERS_DIR / self.poster.dir_name
         dir_path.mkdir(exist_ok=True)  # ensure directory exists
 
         svg_dir_path = dir_path / 'svg'
         svg_dir_path.mkdir(exist_ok=True)
-        self.svg_file_path = svg_dir_path / f"{self.theme_name}.svg"
+        self.svg_file_path = svg_dir_path / f"{self.poster.poster_name}.svg"
 
         png_dir_path = dir_path / 'png'
         png_dir_path.mkdir(exist_ok=True)
-        self.png_file_path = png_dir_path / f"{self.theme_name}.png"
+        self.png_file_path = png_dir_path / f"{self.poster.poster_name}.png"
 
     def generate_svg(self):
 
-        log.debug(f"Generating {self.place_name} in {self.theme_name}")
+        log.debug(f"Generating {self.poster.dir_name} in {self.poster.poster_name}")
         if self.svg_file_path.exists():
-            log.info(f"{self.place_name} in {self.theme_name} already exists")
+            log.info(f"{self.poster.dir_name} in {self.poster.poster_name} already exists")
         else:
-            log.info(f"{self.place_name} in {self.theme_name} doenst exist yet")
+            log.info(f"{self.poster.dir_name} in {self.poster.poster_name} doenst exist yet")
             self.generate_from_scratch()
 
     def save_png(self, max_size: int | None = None):
@@ -146,7 +146,7 @@ class Generator():
     def create_map_content(self):
         log.info("Creating map content")
         self._init_map_content()
-        self.fetcher = Fetcher(self.bbox, self.map_space_dims)
+        self.fetcher = Fetcher(self.poster.bbox, self.map_space_dims)
 
         for layer_name, layer_info in self.map_layers_params.items():
             log.info(f"Creating layer: {layer_name}")

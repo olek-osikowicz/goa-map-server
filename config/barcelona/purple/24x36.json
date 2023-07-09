@@ -10,7 +10,7 @@
     "template": {
         "width": 7200,
         "height": 10800,
-        "background_fill": "#976A9E",
+        "background_fill": "#FFFFFF",
         "map_frame": {
             "fill": "#EEE8AA",
             "offset": 150,
