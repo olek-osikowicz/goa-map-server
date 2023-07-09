@@ -1,0 +1,109 @@
+{
+    "place_bbox": [
+        2.092325,
+        41.327686,
+        2.242389,
+        41.454932
+    ],
+    "place_name": "barcelona",
+    "theme_name": "Creamy 24x36",
+    "template": {
+        "width": 7200,
+        "height": 10800,
+        "background_fill": "#241c1c",
+        "map_frame": {
+            "fill": "#ffffff",
+            "offset": 150,
+            "width": 0
+        },
+        "bottom_area_height": 450,
+        "main_text": {
+            "y_offset": 0,
+            "text": "Barcelona",
+            "font_size": 240,
+            "font_family": "sans-serif",
+            "fill": "#eef5c0"
+        },
+        "sub_text": {
+            "y_offset": 200,
+            "text": "41.3874° N, 2.1686° E",
+            "font_size": 144,
+            "font_family": "sans-serif",
+            "fill": "#eef5c0"
+        }
+    },
+    "map_layers": {
+        "land": {
+            "fill": "#D6C8B8"
+        },
+        "green": {
+            "fill": "#A19E96",
+            "tags": {
+                "leisure": "park",
+                "landuse": "forest"
+            }
+        },
+        "water": {
+            "fill": "#685E5B"
+        },
+        "pier": {
+            "fill": "#D6C8B8",
+            "tags": {
+                "man_made": "pier"
+            }
+        },
+        "streets": {
+            "base_width": 2,
+            "types": {
+                "footway": {
+                    "stroke": "#B28872",
+                    "relative_width": 1
+                },
+                "pedestrian": {
+                    "stroke": "#B28872",
+                    "relative_width": 2
+                },
+                "unclassified": {
+                    "stroke": "#B28872",
+                    "relative_width": 2
+                },
+                "service": {
+                    "stroke": "#B28872",
+                    "relative_width": 2
+                },
+                "living_street": {
+                    "stroke": "#B28872",
+                    "relative_width": 3
+                },
+                "residential": {
+                    "stroke": "#B28872",
+                    "relative_width": 3
+                },
+                "cycleway": {
+                    "stroke": "#B28872",
+                    "relative_width": 3.5
+                },
+                "tertiary": {
+                    "stroke": "#B28872",
+                    "relative_width": 3.5
+                },
+                "secondary": {
+                    "stroke": "#B28872",
+                    "relative_width": 4
+                },
+                "primary": {
+                    "stroke": "#B28872",
+                    "relative_width": 4.5
+                },
+                "trunk": {
+                    "stroke": "#B28872",
+                    "relative_width": 5
+                },
+                "motorway": {
+                    "stroke": "#B28872",
+                    "relative_width": 5
+                }
+            }
+        }
+    }
+}

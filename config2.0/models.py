@@ -1,0 +1,29 @@
+from pydantic import BaseModel
+
+class MapFrame(BaseModel):
+    fill: str
+    offset: int
+    width: int
+
+class TextBox(BaseModel):
+    x: int
+    y: int
+    text: str
+    font_size: int
+    font_family: str
+    fill: str
+
+class Template(BaseModel):
+    width: int
+    height: int
+    background_fill: str
+    map_frame: MapFrame | None
+    bottom_area_height: int
+    text_boxes: list[TextBox] | None
+
+class Poster(BaseModel):
+    bbox: list[float]
+    dir_name: str
+    poster_name: str
+    template: Template
+    map_layers: dict

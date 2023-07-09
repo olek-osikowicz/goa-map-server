@@ -1,17 +1,24 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, status
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import JSONResponse
 from fastapi.responses import FileResponse, HTMLResponse
 import base64
 import asyncio
 from goamapper.generator import Generator
 import logging as log
 import json
+from pydantic import BaseModel
 
 log.basicConfig(format='%(levelname)s:%(asctime)s: %(message)s',level=log.DEBUG)
 
 app = FastAPI()
 from fastapi.middleware.cors import CORSMiddleware
 
-origins = ["*"]
+origins = [
+    "http://localhost",
+    "http://localhost:8080",
+    "http://localhost:5173",
+]
 
 app.add_middleware(
     CORSMiddleware,
@@ -32,19 +39,30 @@ def png2base64(path):
 def root():
     return {'data': "Hello World"}
 
+# class Config(BaseModel):
+#     place_bbox: list
+#     theme_name: str
+#     place_name: str
+#     template: dict
+#     map_layers: dict
+
+
 
 @app.post("/png")
-async def file(request: Request):
+async def file(req: Request):
     # await asyncio.sleep(5)
-    body = await request.json()
+    # body = await request.json()
     
-    if isinstance(body, str):
-        body = json.loads(body)
+    # if isinstance(body, str):
+    #     body = json.loads(body)
 
+
+    body = await req.json()
     log.debug(f"{type(body) = }")   
     assert isinstance(body, dict), "Body is not dict"
     log.debug(f"{body = }")
 
+    
     g = Generator(body)
     g.generate_svg()
     IMAGE_MAX_SIZE = 1000 #px
@@ -52,3 +70,12 @@ async def file(request: Request):
     data = png2base64(g.png_file_path)
     return {"data": data}
     # return FileResponse(path=g.png_file_path)
+
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(request: Request, exc: RequestValidationError):
+    exc_str = f'{exc}'.replace('\n', ' ').replace('   ', ' ')
+    log.error(f"{request}: {exc_str}")
+        
+    log.error(exc.json())
+    content = {'status_code': 10422, 'message': exc_str, 'data': None}
+    return JSONResponse(content=content, status_code=status.HTTP_422_UNPROCESSABLE_ENTITY)

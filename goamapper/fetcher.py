@@ -37,6 +37,7 @@ class Fetcher():
 
         #Process bbox
         self.bbox_cords = bbox_cords
+        log.debug(f"{bbox_cords = }")
         self.bbox_pol = box(*bbox_cords)
         self.bbox_gdf = GeoDataFrame(geometry=[self.bbox_pol],
                                      crs=GEO_2D_CRS).to_crs(MERCATOR_CRS)
