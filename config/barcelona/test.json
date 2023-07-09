@@ -1,12 +1,12 @@
 {
-    "place_bbox": [
-        -74.081099,
-        40.674522,
-        -73.899656,
-        40.822234
+    "bbox": [
+        2.092325,
+        41.327686,
+        2.242389,
+        41.454932
     ],
-    "place_name": "nyc",
-    "theme_name": "Blueprint 11x14",
+    "dir_name": "barcelona",
+    "poster_name": "test new conf 11x14",
     "template": {
         "width": 3300,
         "height": 4200,
@@ -17,20 +17,24 @@
             "width": 0
         },
         "bottom_area_height": 450,
-        "main_text": {
-            "y_offset": 0,
-            "text": "New York",
-            "font_size": 240,
-            "font_family": "Times New Roman",
-            "fill": "#111111"
-        },
-        "sub_text": {
-            "y_offset": 200,
-            "text": "40.7128° N, 74.0060° W",
-            "font_size": 144,
-            "font_family": "Times New Roman",
-            "fill": "#111111"
-        }
+        "text_boxes": [
+            {
+                "x": 150,
+                "y": 3700,
+                "text": "Barcelona",
+                "font_size": 240,
+                "font_family": "sans-serif",
+                "fill": "#111111"
+            },
+            {
+                "x": 500,
+                "y": 3800,
+                "text": "41.3874° N, 2.1686° E",
+                "font_size": 144,
+                "font_family": "sans-serif",
+                "fill": "#111111"
+            }
+        ]
     },
     "map_layers": {
         "land": {
