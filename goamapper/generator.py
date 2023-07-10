@@ -13,8 +13,9 @@ RENDERS_DIR = Path("renders")
 
 
 class Generator():
-    def __init__(self, poster: Poster) -> None:
+    def __init__(self, poster: Poster, overwrite: bool = False) -> None:
         self.poster = poster
+        self.overwrite = overwrite
 
         # self.map_layers_params = config['map_layers']
 
@@ -41,17 +42,19 @@ class Generator():
 
         log.debug(
             f"Generating {self.poster.dir_name} in {self.poster.poster_name}")
-        if self.svg_file_path.exists():
+
+        if self.svg_file_path.exists() and not self.overwrite:
             log.info(
                 f"{self.poster.dir_name} in {self.poster.poster_name} already exists")
-        else:
+
+        else: #generate from scratch
             log.info(
                 f"{self.poster.dir_name} in {self.poster.poster_name} doenst exist yet")
             self.generate_from_scratch()
 
     def save_png(self, max_size: int | None = None):
 
-        if self.png_file_path.exists():
+        if self.png_file_path.exists() and not self.overwrite:
             log.debug("PNG file already exists")
             return
         log.info(f"Saving png to {self.png_file_path}")
@@ -182,7 +185,7 @@ class Generator():
 
         self.create_template()
         d.append(self.template)
-        
+
         self.create_text_area()
         d.append(self.text_area)
 

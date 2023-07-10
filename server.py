@@ -45,19 +45,10 @@ def root():
 async def file(p: Poster):
 
     # return {"msg": f"{p}"}
-    g = Generator(p)
+    g = Generator(p, overwrite=True)
     g.generate_svg()
     IMAGE_MAX_SIZE = 1000 #px
     g.save_png(max_size=IMAGE_MAX_SIZE)
     data = png2base64(g.png_file_path)
     return {"data": data}
     # return FileResponse(path=g.png_file_path)
-
-@app.exception_handler(RequestValidationError)
-async def validation_exception_handler(request: Request, exc: RequestValidationError):
-    exc_str = f'{exc}'.replace('\n', ' ').replace('   ', ' ')
-    log.error(f"{request}: {exc_str}")
-        
-    log.error(exc.json())
-    content = {'status_code': 10422, 'message': exc_str, 'data': None}
-    return JSONResponse(content=content, status_code=status.HTTP_422_UNPROCESSABLE_ENTITY)

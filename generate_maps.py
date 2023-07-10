@@ -13,7 +13,7 @@ def generate_from_file(path: Path):
         data = json.load(file)
 
     p = Poster(**data)
-    g = Generator(p)
+    g = Generator(p, overwrite=False)
     g.generate_svg()
     g.save_png()
 
