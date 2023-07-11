@@ -1,5 +1,4 @@
 # import prettymaps
-from matplotlib import pyplot as plt
 import osmnx as ox
 from shapely.geometry import (
     box,
