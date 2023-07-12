@@ -1,12 +1,12 @@
 {
-    "place_bbox": [
+    "bbox": [
         2.092325,
         41.327686,
         2.242389,
         41.454932
     ],
-    "place_name": "barcelona",
-    "theme_name": "Blueprint 8x10",
+    "dir_name": "barcelona",
+    "poster_name": "Blueprint2 8x10",
     "template": {
         "width": 2400,
         "height": 3000,
@@ -17,20 +17,24 @@
             "width": 0
         },
         "bottom_area_height": 300,
-        "main_text": {
-            "y_offset": -35,
-            "text": "Barcelona",
-            "font_size": 150,
-            "font_family": "sans-serif",
-            "fill": "#111111"
-        },
-        "sub_text": {
-            "y_offset": 120,
-            "text": "41.3874° N, 2.1686° E",
-            "font_size": 90,
-            "font_family": "sans-serif",
-            "fill": "#111111"
-        }
+        "text_boxes": [
+            {
+                "x": 150,
+                "y": 3700,
+                "text": "Barcelona",
+                "font_size": 240,
+                "font_family": "sans-serif",
+                "fill": "#111111"
+            },
+            {
+                "x": 500,
+                "y": 3800,
+                "text": "41.3874° N, 2.1686° E",
+                "font_size": 144,
+                "font_family": "sans-serif",
+                "fill": "#111111"
+            }
+        ]
     },
     "map_layers": {
         "land": {
