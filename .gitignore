@@ -3,3 +3,4 @@ archives/
 renders/*
 assets/*
 cache/
+.venv/
