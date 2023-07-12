@@ -1,5 +1,4 @@
 # import prettymaps
-from matplotlib import pyplot as plt
 import osmnx as ox
 from shapely.geometry import (
     box,
@@ -14,8 +13,6 @@ import pandas as pd
 import geopandas as gpd
 from geopandas import GeoDataFrame
 from shapely.affinity import rotate
-import numpy as np
-import drawsvg as dw
 import logging as log
 
 # CONSTANS

@@ -4,7 +4,6 @@ import logging as log
 import subprocess
 import drawsvg as dw
 from goamapper.drawer import drawAreas, drawWays
-import cairosvg
 from goamapper.models import Poster
 from goamapper.fetcher import Fetcher
 from goamapper.recolorer import recolour
