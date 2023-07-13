@@ -5,32 +5,32 @@
         2.242389,
         41.454932
     ],
-    "dir_name": "barcelona",
-    "poster_name": "Blueprint2 12x16",
+    "dir_name": "default",
+    "poster_name": "default 12x18",
     "template": {
         "width": 3600,
-        "height": 4800,
+        "height": 5400,
         "background_fill": "#ffffff",
         "map_frame": {
             "fill": "#ffffff",
             "offset": 150,
             "width": 0
         },
-        "bottom_area_height": 450,
+        "bottom_area_height": 400,
         "text_boxes": [
             {
-                "x": 150,
-                "y": 3700,
+                "x": 127,
+                "y": 4914,
                 "text": "Barcelona",
                 "font_size": 240,
                 "font_family": "sans-serif",
                 "fill": "#111111"
             },
             {
-                "x": 500,
-                "y": 3800,
+                "x": 145,
+                "y": 5124,
                 "text": "41.3874° N, 2.1686° E",
-                "font_size": 144,
+                "font_size": 120,
                 "font_family": "sans-serif",
                 "fill": "#111111"
             }

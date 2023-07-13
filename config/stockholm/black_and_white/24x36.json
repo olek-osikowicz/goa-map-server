@@ -1,36 +1,36 @@
 {
     "bbox": [
-        2.092325,
-        41.327686,
-        2.242389,
-        41.454932
+        17.983332,
+        59.283333,
+        18.138915,
+        59.350559
     ],
-    "dir_name": "barcelona",
-    "poster_name": "Blueprint2 18x24",
+    "dir_name": "stockholm",
+    "poster_name": "black_and_white 24x36",
     "template": {
-        "width": 5400,
-        "height": 7200,
-        "background_fill": "#ffffff",
+        "width": 7200,
+        "height": 10800,
+        "background_fill": "#f3f3f3",
         "map_frame": {
-            "fill": "#ffffff",
+            "fill": "#f3f3f3",
             "offset": 150,
             "width": 0
         },
-        "bottom_area_height": 450,
+        "bottom_area_height": 400,
         "text_boxes": [
             {
-                "x": 150,
-                "y": 3700,
-                "text": "Barcelona",
+                "x": 127,
+                "y": 10314,
+                "text": "Stockholm",
                 "font_size": 240,
                 "font_family": "sans-serif",
                 "fill": "#111111"
             },
             {
-                "x": 500,
-                "y": 3800,
-                "text": "41.3874° N, 2.1686° E",
-                "font_size": 144,
+                "x": 145,
+                "y": 10524,
+                "text": "Sverige",
+                "font_size": 120,
                 "font_family": "sans-serif",
                 "fill": "#111111"
             }
@@ -38,73 +38,73 @@
     },
     "map_layers": {
         "land": {
-            "fill": "#4DA8DA"
+            "fill": "#f7f5f5"
         },
         "green": {
-            "fill": "#8AD9F0",
+            "fill": "#e8e6e6",
             "tags": {
                 "leisure": "park",
                 "landuse": "forest"
             }
         },
         "water": {
-            "fill": "#ffffff"
+            "fill": "#bfbdbd"
         },
         "pier": {
-            "fill": "#4DA8DA",
+            "fill": "#f7f5f5",
             "tags": {
                 "man_made": "pier"
             }
         },
         "streets": {
-            "base_width": 1.5,
+            "base_width": 2,
             "types": {
                 "footway": {
-                    "stroke": "#A8F2FB",
+                    "stroke": "#2e2d2d",
                     "relative_width": 1
                 },
                 "pedestrian": {
-                    "stroke": "#C6FBFF",
+                    "stroke": "#2e2d2d",
                     "relative_width": 2
                 },
                 "unclassified": {
-                    "stroke": "#C6FBFF",
+                    "stroke": "#0a0a0a",
                     "relative_width": 2
                 },
                 "service": {
-                    "stroke": "#C6FBFF",
+                    "stroke": "#0a0a0a",
                     "relative_width": 2
                 },
                 "living_street": {
-                    "stroke": "#C6FBFF",
+                    "stroke": "#0a0a0a",
                     "relative_width": 3
                 },
                 "residential": {
-                    "stroke": "#C6FBFF",
+                    "stroke": "#0a0a0a",
                     "relative_width": 3
                 },
                 "cycleway": {
-                    "stroke": "#C6FBFF",
+                    "stroke": "#2e2d2d",
                     "relative_width": 3.5
                 },
                 "tertiary": {
-                    "stroke": "#C6FBFF",
+                    "stroke": "#0a0a0a",
                     "relative_width": 3.5
                 },
                 "secondary": {
-                    "stroke": "#C6FBFF",
+                    "stroke": "#0a0a0a",
                     "relative_width": 4
                 },
                 "primary": {
-                    "stroke": "#C6FBFF",
+                    "stroke": "#0a0a0a",
                     "relative_width": 4.5
                 },
                 "trunk": {
-                    "stroke": "#C6FBFF",
+                    "stroke": "#0a0a0a",
                     "relative_width": 5
                 },
                 "motorway": {
-                    "stroke": "#C6FBFF",
+                    "stroke": "#0a0a0a",
                     "relative_width": 5
                 }
             }
