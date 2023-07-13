@@ -9,7 +9,7 @@ from multiprocessing import Pool
 CONFIG_DIR = Path("config")
 
 def generate_from_file(path: Path):
-    with open(path) as file:
+    with open(path, encoding="utf8") as file:
         data = json.load(file)
 
     p = Poster(**data)
@@ -19,8 +19,10 @@ def generate_from_file(path: Path):
 
 
 def main():
-    paths = [p for p in CONFIG_DIR.glob('**/*') if p.is_file()]
-    with Pool(processes=10) as pool:
+
+    #get json files
+    paths = [p for p in CONFIG_DIR.glob('**/*') if p.suffix == '.json']
+    with Pool(processes=1) as pool:
         pool.map(generate_from_file, paths)
 
 
