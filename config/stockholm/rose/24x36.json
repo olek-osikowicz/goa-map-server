@@ -6,7 +6,7 @@
         59.359613
     ],
     "dir_name": "stockholm",
-    "poster_name": "candy 24x36",
+    "poster_name": "rose 24x36",
     "template": {
         "width": 7200,
         "height": 10800,
@@ -38,20 +38,20 @@
     },
     "map_layers": {
         "land": {
-            "fill": "#cfa9cc"
+            "fill": "#d9adb8"
         },
         "green": {
-            "fill": "#abb3cf",
+            "fill": "#baa9ae",
             "tags": {
                 "leisure": "park",
                 "landuse": "forest"
             }
         },
         "water": {
-            "fill": "#b0d1b2"
+            "fill": "#c1dedc"
         },
         "pier": {
-            "fill": "#cfa9cc",
+            "fill": "#d9adb8",
             "tags": {
                 "man_made": "pier"
             }
@@ -60,51 +60,51 @@
             "base_width": 2,
             "types": {
                 "footway": {
-                    "stroke": "#3d393d",
+                    "stroke": "#faf7f8",
                     "relative_width": 1
                 },
                 "pedestrian": {
-                    "stroke": "#3d393d",
+                    "stroke": "#faf7f8",
                     "relative_width": 2
                 },
                 "unclassified": {
-                    "stroke": "#262326",
+                    "stroke": "#f5f0f1",
                     "relative_width": 2
                 },
                 "service": {
-                    "stroke": "#262326",
+                    "stroke": "#f5f0f1",
                     "relative_width": 2
                 },
                 "living_street": {
-                    "stroke": "#262326",
+                    "stroke": "#f5f0f1",
                     "relative_width": 3
                 },
                 "residential": {
-                    "stroke": "#262326",
+                    "stroke": "#f5f0f1",
                     "relative_width": 3
                 },
                 "cycleway": {
-                    "stroke": "#3d393d",
+                    "stroke": "#faf7f8",
                     "relative_width": 3.5
                 },
                 "tertiary": {
-                    "stroke": "#262326",
+                    "stroke": "#f5f0f1",
                     "relative_width": 3.5
                 },
                 "secondary": {
-                    "stroke": "#262326",
+                    "stroke": "#f5f0f1",
                     "relative_width": 4
                 },
                 "primary": {
-                    "stroke": "#262326",
+                    "stroke": "#f5f0f1",
                     "relative_width": 4.5
                 },
                 "trunk": {
-                    "stroke": "#262326",
+                    "stroke": "#f5f0f1",
                     "relative_width": 5
                 },
                 "motorway": {
-                    "stroke": "#262326",
+                    "stroke": "#f5f0f1",
                     "relative_width": 5
                 }
             }

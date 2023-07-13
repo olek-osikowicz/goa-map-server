@@ -6,31 +6,31 @@
         59.359613
     ],
     "dir_name": "stockholm",
-    "poster_name": "candy 24x36",
+    "poster_name": "rose 8x10",
     "template": {
-        "width": 7200,
-        "height": 10800,
+        "width": 2400,
+        "height": 3000,
         "background_fill": "#f3f3f3",
         "map_frame": {
             "fill": "#f3f3f3",
             "offset": 150,
             "width": 0
         },
-        "bottom_area_height": 400,
+        "bottom_area_height": 300,
         "text_boxes": [
             {
-                "x": 127,
-                "y": 10314,
+                "x": 132,
+                "y": 2603,
                 "text": "Stockholm",
-                "font_size": 240,
+                "font_size": 180,
                 "font_family": "sans-serif",
                 "fill": "#111111"
             },
             {
-                "x": 145,
-                "y": 10524,
+                "x": 147,
+                "y": 2769,
                 "text": "Sverige",
-                "font_size": 120,
+                "font_size": 80,
                 "font_family": "sans-serif",
                 "fill": "#111111"
             }
@@ -38,73 +38,73 @@
     },
     "map_layers": {
         "land": {
-            "fill": "#cfa9cc"
+            "fill": "#d9adb8"
         },
         "green": {
-            "fill": "#abb3cf",
+            "fill": "#baa9ae",
             "tags": {
                 "leisure": "park",
                 "landuse": "forest"
             }
         },
         "water": {
-            "fill": "#b0d1b2"
+            "fill": "#c1dedc"
         },
         "pier": {
-            "fill": "#cfa9cc",
+            "fill": "#d9adb8",
             "tags": {
                 "man_made": "pier"
             }
         },
         "streets": {
-            "base_width": 2,
+            "base_width": 0.667,
             "types": {
                 "footway": {
-                    "stroke": "#3d393d",
+                    "stroke": "#faf7f8",
                     "relative_width": 1
                 },
                 "pedestrian": {
-                    "stroke": "#3d393d",
+                    "stroke": "#faf7f8",
                     "relative_width": 2
                 },
                 "unclassified": {
-                    "stroke": "#262326",
+                    "stroke": "#f5f0f1",
                     "relative_width": 2
                 },
                 "service": {
-                    "stroke": "#262326",
+                    "stroke": "#f5f0f1",
                     "relative_width": 2
                 },
                 "living_street": {
-                    "stroke": "#262326",
+                    "stroke": "#f5f0f1",
                     "relative_width": 3
                 },
                 "residential": {
-                    "stroke": "#262326",
+                    "stroke": "#f5f0f1",
                     "relative_width": 3
                 },
                 "cycleway": {
-                    "stroke": "#3d393d",
+                    "stroke": "#faf7f8",
                     "relative_width": 3.5
                 },
                 "tertiary": {
-                    "stroke": "#262326",
+                    "stroke": "#f5f0f1",
                     "relative_width": 3.5
                 },
                 "secondary": {
-                    "stroke": "#262326",
+                    "stroke": "#f5f0f1",
                     "relative_width": 4
                 },
                 "primary": {
-                    "stroke": "#262326",
+                    "stroke": "#f5f0f1",
                     "relative_width": 4.5
                 },
                 "trunk": {
-                    "stroke": "#262326",
+                    "stroke": "#f5f0f1",
                     "relative_width": 5
                 },
                 "motorway": {
-                    "stroke": "#262326",
+                    "stroke": "#f5f0f1",
                     "relative_width": 5
                 }
             }
