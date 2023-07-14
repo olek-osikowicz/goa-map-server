@@ -1,0 +1,114 @@
+{
+    "bbox": [
+        13.311585,
+        52.440500,
+        13.489095,
+        52.588793
+    ],
+    "dir_name": "cairo",
+    "poster_name": "creamy 24x36",
+    "template": {
+        "width": 7200,
+        "height": 10800,
+        "background_fill": "#f3f3f3",
+        "map_frame": {
+            "fill": "#f3f3f3",
+            "offset": 150,
+            "width": 0
+        },
+        "bottom_area_height": 400,
+        "text_boxes": [
+            {
+                "x": 3600,
+                "y": 10314,
+                "text": "القاهرة",
+                "font_size": 240,
+                "font_family": "Zen Kaku Gothic New",
+                "fill": "#111111"
+            },
+            {
+                "x": 3600,
+                "y": 10524,
+                "text": "مصر",
+                "font_size": 120,
+                "font_family": "Zen Kaku Gothic New",
+                "fill": "#111111"
+            }
+        ]
+    },
+    "map_layers": {
+        "land": {
+            "fill": "#d6c8b8"
+        },
+        "green": {
+            "fill": "#a19e95",
+            "tags": {
+                "leisure": "park",
+                "landuse": ["forest", "village_green"],
+                "natural": "wood"
+            }
+        },
+        "water": {
+            "fill": "#695e5c"
+        },
+        "pier": {
+            "fill": "#d6c8b8",
+            "tags": {
+                "man_made": "pier"
+            }
+        },
+        "streets": {
+            "base_width": 2,
+            "types": {
+                "footway": {
+                    "stroke": "#b38872",
+                    "relative_width": 1
+                },
+                "pedestrian": {
+                    "stroke": "#b38872",
+                    "relative_width": 2
+                },
+                "unclassified": {
+                    "stroke": "#b38872",
+                    "relative_width": 2
+                },
+                "service": {
+                    "stroke": "#b38872",
+                    "relative_width": 2
+                },
+                "living_street": {
+                    "stroke": "#b38872",
+                    "relative_width": 3
+                },
+                "residential": {
+                    "stroke": "#b38872",
+                    "relative_width": 3
+                },
+                "cycleway": {
+                    "stroke": "#b38872",
+                    "relative_width": 3.5
+                },
+                "tertiary": {
+                    "stroke": "#b38872",
+                    "relative_width": 3.5
+                },
+                "secondary": {
+                    "stroke": "#b38872",
+                    "relative_width": 4
+                },
+                "primary": {
+                    "stroke": "#b38872",
+                    "relative_width": 4.5
+                },
+                "trunk": {
+                    "stroke": "#b38872",
+                    "relative_width": 5
+                },
+                "motorway": {
+                    "stroke": "#b38872",
+                    "relative_width": 5
+                }
+            }
+        }
+    }
+}
