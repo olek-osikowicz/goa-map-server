@@ -106,8 +106,8 @@ class Generator():
                 fill=tb.fill,
                 font_size=tb.font_size,
                 font_family=tb.font_family,
-                dominant_baseline='hanging'
-                # text_anchor='middle'
+                dominant_baseline='hanging',
+                text_anchor='middle'
             ))
 
     def create_template(self):

@@ -19,7 +19,7 @@
         "bottom_area_height": 400,
         "text_boxes": [
             {
-                "x": 129,
+                "x": 3600,
                 "y": 10314,
                 "text": "Kraków",
                 "font_size": 240,
@@ -27,7 +27,7 @@
                 "fill": "#111111"
             },
             {
-                "x": 140,
+                "x": 3600,
                 "y": 10524,
                 "text": "Polska",
                 "font_size": 120,

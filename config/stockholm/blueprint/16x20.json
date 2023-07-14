@@ -19,7 +19,7 @@
         "bottom_area_height": 400,
         "text_boxes": [
             {
-                "x": 136,
+                "x": 2400,
                 "y": 5514,
                 "text": "Stockholm",
                 "font_size": 240,
@@ -27,7 +27,7 @@
                 "fill": "#111111"
             },
             {
-                "x": 143,
+                "x": 2400,
                 "y": 5724,
                 "text": "Sverige",
                 "font_size": 120,
