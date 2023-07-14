@@ -44,7 +44,8 @@
             "fill": "#abb3cf",
             "tags": {
                 "leisure": "park",
-                "landuse": "forest"
+                "landuse": ["forest", "village green"],
+                "natural": "wood"
             }
         },
         "water": {

@@ -1,9 +1,9 @@
 {
     "bbox": [
-        19.912104,
-        50.038588,
-        19.965747,
-        50.079122
+        19.888397,
+        50.006258,
+        20.004163,
+        50.100445
     ],
     "dir_name": "krakow",
     "poster_name": "sandy 12x18",
@@ -44,7 +44,8 @@
             "fill": "#d6cec1",
             "tags": {
                 "leisure": "park",
-                "landuse": "forest"
+                "landuse": ["forest", "village green"],
+                "natural": "wood"
             }
         },
         "water": {
