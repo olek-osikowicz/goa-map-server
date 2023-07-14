@@ -1,9 +1,9 @@
 {
     "bbox": [
-        17.983332,
-        59.274101,
-        18.157078,
-        59.359613
+        18.001894,
+        59.281043,
+        18.132170,
+        59.360298
     ],
     "dir_name": "stockholm",
     "poster_name": "artery 12x16",
@@ -19,19 +19,19 @@
         "bottom_area_height": 400,
         "text_boxes": [
             {
-                "x": 127,
+                "x": 129,
                 "y": 4314,
                 "text": "Stockholm",
                 "font_size": 240,
-                "font_family": "sans-serif",
+                "font_family": "Zen Kaku Gothic New",
                 "fill": "#111111"
             },
             {
-                "x": 145,
+                "x": 140,
                 "y": 4524,
                 "text": "Sverige",
                 "font_size": 120,
-                "font_family": "sans-serif",
+                "font_family": "Zen Kaku Gothic New",
                 "fill": "#111111"
             }
         ]
