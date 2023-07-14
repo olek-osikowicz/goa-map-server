@@ -98,6 +98,7 @@ class Generator():
         self.text_area = dw.Group(id='text_area')
 
         for tb in self.poster.template.text_boxes:
+
             self.text_area.append(dw.Text(
                 text=tb.text,
                 x=tb.x,
@@ -105,8 +106,8 @@ class Generator():
                 fill=tb.fill,
                 font_size=tb.font_size,
                 font_family=tb.font_family,
-                dominant_baseline='hanging',
-                text_anchor='middle'
+                dominant_baseline='hanging'
+                # text_anchor='middle'
             ))
 
     def create_template(self):

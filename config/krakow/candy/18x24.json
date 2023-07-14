@@ -19,19 +19,19 @@
         "bottom_area_height": 400,
         "text_boxes": [
             {
-                "x": 127,
+                "x": 134,
                 "y": 6714,
                 "text": "Kraków",
                 "font_size": 240,
-                "font_family": "sans-serif",
+                "font_family": "Zen Kaku Gothic New",
                 "fill": "#111111"
             },
             {
-                "x": 145,
+                "x": 141,
                 "y": 6924,
                 "text": "Polska",
                 "font_size": 120,
-                "font_family": "sans-serif",
+                "font_family": "Zen Kaku Gothic New",
                 "fill": "#111111"
             }
         ]
