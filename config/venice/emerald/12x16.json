@@ -5,7 +5,7 @@
         12.385187,
         45.481745
     ],
-    "dir_name": "stockholm",
+    "dir_name": "venice",
     "poster_name": "emerald 12x16",
     "template": {
         "width": 3600,
@@ -21,7 +21,7 @@
             {
                 "x": 127,
                 "y": 4314,
-                "text": "Stockholm",
+                "text": "Venezia",
                 "font_size": 240,
                 "font_family": "sans-serif",
                 "fill": "#111111"
@@ -29,7 +29,7 @@
             {
                 "x": 145,
                 "y": 4524,
-                "text": "Sverige",
+                "text": "Italia",
                 "font_size": 120,
                 "font_family": "sans-serif",
                 "fill": "#111111"
