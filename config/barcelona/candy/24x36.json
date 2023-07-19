@@ -33,6 +33,14 @@
                 "font_size": 120,
                 "font_family": "Zen Kaku Gothic New",
                 "fill": "#111111"
+            },
+            {
+                "x": 6650,
+                "y": 10630,
+                "text": "© Copyright and attribution information and OpenStreetMap Contributors",
+                "font_size": 24,
+                "font_family": "Zen Kaku Gothic New",
+                "fill": "#b0b0b0"
             }
         ]
     },
