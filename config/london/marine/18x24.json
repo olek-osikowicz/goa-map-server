@@ -35,9 +35,9 @@
                 "fill": "#111111"
             },
             {
-                "x": 4850,
-                "y": 7030,
-                "text": "© Copyright and attribution information and OpenStreetMap Contributors",
+                "x": 5086,
+                "y": 7028,
+                "text": "Map data from OpenStreetMap",
                 "font_size": 24,
                 "font_family": "Zen Kaku Gothic New",
                 "fill": "#b0b0b0"
