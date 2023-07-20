@@ -1,9 +1,9 @@
 {
     "bbox": [
-        2.234257,
-        48.772080,
-        2.433988,
-        48.944368
+        2.246166,
+        48.790936,
+        2.425374,
+        48.930466
     ],
     "dir_name": "paris",
     "poster_name": "marine 16x20",
@@ -35,9 +35,9 @@
                 "fill": "#111111"
             },
             {
-                "x": 4486,
-                "y": 5828,
-                "text": "Map data from OpenStreetMap",
+                "x": 4250,
+                "y": 5830,
+                "text": "© Copyright and attribution information and OpenStreetMap Contributors",
                 "font_size": 24,
                 "font_family": "Zen Kaku Gothic New",
                 "fill": "#b0b0b0"
