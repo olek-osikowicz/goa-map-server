@@ -21,7 +21,7 @@
             {
                 "x": 3600,
                 "y": 10314,
-                "text": "東京",
+                "text": "Tokyo",
                 "font_size": 240,
                 "font_family": "Zen Kaku Gothic New",
                 "fill": "#111111"
@@ -29,7 +29,7 @@
             {
                 "x": 3600,
                 "y": 10524,
-                "text": "日本",
+                "text": "Japan",
                 "font_size": 120,
                 "font_family": "Zen Kaku Gothic New",
                 "fill": "#111111"

@@ -21,7 +21,7 @@
             {
                 "x": 2400,
                 "y": 5514,
-                "text": "القاهرة",
+                "text": "Cairo",
                 "font_size": 240,
                 "font_family": "Zen Kaku Gothic New",
                 "fill": "#111111"
@@ -29,7 +29,7 @@
             {
                 "x": 2400,
                 "y": 5724,
-                "text": "مصر",
+                "text": "Egypt",
                 "font_size": 120,
                 "font_family": "Zen Kaku Gothic New",
                 "fill": "#111111"
