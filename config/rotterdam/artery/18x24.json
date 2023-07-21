@@ -46,7 +46,7 @@
     },
     "map_layers": {
         "land": {
-            "fill": "#fcfafa"
+            "fill": "#f3f3f3"
         },
         "green": {
             "fill": "#cccccf",
@@ -57,10 +57,10 @@
             }
         },
         "water": {
-            "fill": "#040361"
+            "fill": "#410b17"
         },
         "pier": {
-            "fill": "#fcfafa",
+            "fill": "#f3f3f3",
             "tags": {
                 "man_made": "pier"
             }
@@ -69,51 +69,51 @@
             "base_width": 1.5,
             "types": {
                 "footway": {
-                    "stroke": "#b80719",
+                    "stroke": "#981b1b",
                     "relative_width": 1
                 },
                 "pedestrian": {
-                    "stroke": "#b80719",
+                    "stroke": "#981b1b",
                     "relative_width": 2
                 },
                 "unclassified": {
-                    "stroke": "#b80719",
+                    "stroke": "#981b1b",
                     "relative_width": 2
                 },
                 "service": {
-                    "stroke": "#b80719",
+                    "stroke": "#981b1b",
                     "relative_width": 2
                 },
                 "living_street": {
-                    "stroke": "#b80719",
+                    "stroke": "#981b1b",
                     "relative_width": 3
                 },
                 "residential": {
-                    "stroke": "#b80719",
+                    "stroke": "#981b1b",
                     "relative_width": 3
                 },
                 "cycleway": {
-                    "stroke": "#b80719",
+                    "stroke": "#981b1b",
                     "relative_width": 3.5
                 },
                 "tertiary": {
-                    "stroke": "#b80719",
+                    "stroke": "#981b1b",
                     "relative_width": 3.5
                 },
                 "secondary": {
-                    "stroke": "#b80719",
+                    "stroke": "#981b1b",
                     "relative_width": 4
                 },
                 "primary": {
-                    "stroke": "#b80719",
+                    "stroke": "#981b1b",
                     "relative_width": 4.5
                 },
                 "trunk": {
-                    "stroke": "#b80719",
+                    "stroke": "#981b1b",
                     "relative_width": 5
                 },
                 "motorway": {
-                    "stroke": "#b80719",
+                    "stroke": "#981b1b",
                     "relative_width": 5
                 }
             }
