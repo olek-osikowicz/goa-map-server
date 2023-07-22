@@ -52,7 +52,10 @@
             "fill": "#cccccf",
             "tags": {
                 "leisure": "park",
-                "landuse": ["forest", "village_green"],
+                "landuse": [
+                    "forest",
+                    "village_green"
+                ],
                 "natural": "wood"
             }
         },
@@ -68,10 +71,6 @@
         "streets": {
             "base_width": 0.667,
             "types": {
-                "footway": {
-                    "stroke": "#981b1b",
-                    "relative_width": 1
-                },
                 "pedestrian": {
                     "stroke": "#981b1b",
                     "relative_width": 2

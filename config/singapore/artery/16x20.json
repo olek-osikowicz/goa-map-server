@@ -68,10 +68,7 @@
         "streets": {
             "base_width": 1.333,
             "types": {
-                "footway": {
-                    "stroke": "#981b1b",
-                    "relative_width": 1
-                },
+
                 "pedestrian": {
                     "stroke": "#981b1b",
                     "relative_width": 2
