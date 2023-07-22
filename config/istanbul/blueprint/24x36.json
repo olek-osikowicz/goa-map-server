@@ -46,10 +46,10 @@
     },
     "map_layers": {
         "land": {
-            "fill": "#247aa8"
+            "fill": "#2c92c9"
         },
         "green": {
-            "fill": "#57addb",
+            "fill": "#78bde3",
             "tags": {
                 "leisure": "park",
                 "landuse": ["forest", "village_green"],
@@ -60,7 +60,7 @@
             "fill": "#f3f3f3"
         },
         "pier": {
-            "fill": "#247aa8",
+            "fill": "#2c92c9",
             "tags": {
                 "man_made": "pier"
             }
@@ -69,51 +69,51 @@
             "base_width": 2,
             "types": {
                 "footway": {
-                    "stroke": "#bcdff1",
+                    "stroke": "#cce1f5",
                     "relative_width": 1
                 },
                 "pedestrian": {
-                    "stroke": "#bcdff1",
+                    "stroke": "#cce1f5",
                     "relative_width": 2
                 },
                 "unclassified": {
-                    "stroke": "#bcdff1",
+                    "stroke": "#cce1f5",
                     "relative_width": 2
                 },
                 "service": {
-                    "stroke": "#bcdff1",
+                    "stroke": "#cce1f5",
                     "relative_width": 2
                 },
                 "living_street": {
-                    "stroke": "#bcdff1",
+                    "stroke": "#cce1f5",
                     "relative_width": 3
                 },
                 "residential": {
-                    "stroke": "#bcdff1",
+                    "stroke": "#cce1f5",
                     "relative_width": 3
                 },
                 "cycleway": {
-                    "stroke": "#bcdff1",
+                    "stroke": "#cce1f5",
                     "relative_width": 3.5
                 },
                 "tertiary": {
-                    "stroke": "#bcdff1",
+                    "stroke": "#cce1f5",
                     "relative_width": 3.5
                 },
                 "secondary": {
-                    "stroke": "#bcdff1",
+                    "stroke": "#cce1f5",
                     "relative_width": 4
                 },
                 "primary": {
-                    "stroke": "#bcdff1",
+                    "stroke": "#cce1f5",
                     "relative_width": 4.5
                 },
                 "trunk": {
-                    "stroke": "#bcdff1",
+                    "stroke": "#cce1f5",
                     "relative_width": 5
                 },
                 "motorway": {
-                    "stroke": "#bcdff1",
+                    "stroke": "#cce1f5",
                     "relative_width": 5
                 }
             }
