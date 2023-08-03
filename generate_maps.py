@@ -9,6 +9,7 @@ from multiprocessing import Pool
 CONFIG_DIR = Path("config")
 
 def generate_from_file(path: Path):
+    log.debug(f"Opening file {path}")
     with open(path, encoding="utf8") as file:
         data = json.load(file)
 
