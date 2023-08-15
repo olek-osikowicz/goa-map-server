@@ -23,7 +23,7 @@ def main():
 
     #get json files
     paths = [p for p in CONFIG_DIR.glob('**/*') if p.suffix == '.json']
-    with Pool(processes=1) as pool:
+    with Pool(processes=2) as pool:
         pool.map(generate_from_file, paths)
 
 
