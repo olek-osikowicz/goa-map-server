@@ -1,0 +1,122 @@
+{
+    "bbox": [
+        19.387679,  
+        51.714258,
+        19.527679, 
+        51.811163
+    ],
+    "dir_name": "lodz",
+    "poster_name": "brick 11x14",
+    "template": {
+        "width": 3300,
+        "height": 4200,
+        "background_fill": "#f3f3f3",
+        "map_frame": {
+            "fill": "#f3f3f3",
+            "offset": 150,
+            "width": 0
+        },
+        "bottom_area_height": 300,
+        "text_boxes": [
+            {
+                "x": 1650,
+                "y": 3803,
+                "text": "Łódź",
+                "font_size": 180,
+                "font_family": "Zen Kaku Gothic New",
+                "fill": "#111111"
+            },
+            {
+                "x": 1650,
+                "y": 3964,
+                "text": "Polska",
+                "font_size": 100,
+                "font_family": "Zen Kaku Gothic New",
+                "fill": "#111111"
+            },
+            {
+                "x": 2986,
+                "y": 4028,
+                "text": "Map data from OpenStreetMap",
+                "font_size": 24,
+                "font_family": "Zen Kaku Gothic New",
+                "fill": "#b0b0b0"
+            }
+        ]
+    },
+    "map_layers": {
+        "land": {
+            "fill": "#f0e7e6"
+        },
+        "green": {
+            "fill": "#cfc3c2",
+            "tags": {
+                "leisure": "park",
+                "landuse": ["forest", "village_green"],
+                "natural": "wood"
+            }
+        },
+        "water": {
+            "fill": "#d97d6f"
+        },
+        "pier": {
+            "fill": "#f0e7e6",
+            "tags": {
+                "man_made": "pier"
+            }
+        },
+        "streets": {
+            "base_width": 0.917,
+            "types": {
+                "footway": {
+                    "stroke": "#4f4d4d",
+                    "relative_width": 1
+                },
+                "pedestrian": {
+                    "stroke": "#4f4d4d",
+                    "relative_width": 2
+                },
+                "unclassified": {
+                    "stroke": "#2b2a2a",
+                    "relative_width": 2
+                },
+                "service": {
+                    "stroke": "#2b2a2a",
+                    "relative_width": 2
+                },
+                "living_street": {
+                    "stroke": "#2b2a2a",
+                    "relative_width": 3
+                },
+                "residential": {
+                    "stroke": "#2b2a2a",
+                    "relative_width": 3
+                },
+                "cycleway": {
+                    "stroke": "#4f4d4d",
+                    "relative_width": 3.5
+                },
+                "tertiary": {
+                    "stroke": "#2b2a2a",
+                    "relative_width": 3.5
+                },
+                "secondary": {
+                    "stroke": "#2b2a2a",
+                    "relative_width": 4
+                },
+                "primary": {
+                    "stroke": "#2b2a2a",
+                    "relative_width": 4.5
+                },
+                "trunk": {
+                    "stroke": "#2b2a2a",
+                    "relative_width": 5
+                },
+                "motorway": {
+                    "stroke": "#2b2a2a",
+                    "relative_width": 5
+                }
+            }
+        }
+    }
+}

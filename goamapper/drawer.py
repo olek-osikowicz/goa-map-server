@@ -30,7 +30,10 @@ def drawPath(p: dw.Path, geom) -> dw.Path:
 
 
 def drawAreas(gdf: GeoDataFrame, fill='blue', id='water') -> dw.Group:
+
     group = dw.Group(id=id, fill=fill)
+
+
 
     for geom in gdf.geometry:
 
@@ -46,61 +49,6 @@ def drawAreas(gdf: GeoDataFrame, fill='blue', id='water') -> dw.Group:
         group.append(p)
 
     return group
-
-
-street_info = {
-    "base_width": 1,
-    "types": {
-        "footway": {
-            "stroke": "#ff2500",
-            "relative_width": 1
-        },
-        "pedestrian": {
-            "stroke": "#ff3a00",
-            "relative_width": 2
-        },
-        "unclassified": {
-            "stroke": "#ff5000",
-            "relative_width": 2
-        },
-        "service": {
-            "stroke": "#ff6500",
-            "relative_width": 2
-        },
-        "living_street": {
-            "stroke": "#ff7a00",
-            "relative_width": 3
-        },
-        "residential": {
-            "stroke": "#ff7a00",
-            "relative_width": 3
-        },
-        "cycleway": {
-            "stroke": "#ff9000",
-            "relative_width": 3.5
-        },
-        "tertiary": {
-            "stroke": "#ffa600",
-            "relative_width": 3.5
-        },
-        "secondary": {
-            "stroke": "#ffbb00",
-            "relative_width": 4
-        },
-        "primary": {
-            "stroke": "#ffd100",
-            "relative_width": 4.5
-        },
-        "trunk": {
-            "stroke": "#ffe600",
-            "relative_width": 5
-        },
-        "motorway": {
-            "stroke": "#ffff00",
-            "relative_width": 5
-        }
-    }
-}
 
 
 def drawWays(gdf: GeoDataFrame, layer_info: dict, id='ways'):
@@ -129,8 +77,4 @@ def drawWays(gdf: GeoDataFrame, layer_info: dict, id='ways'):
 
 
 if __name__ == "__main__":
-    base_width = street_info['base_width']
-    types = street_info['types']
-
-    for name ,v in types.items():
-        print(f"{name}, {v['stroke']}, {v['relative_width']}")
+    pass

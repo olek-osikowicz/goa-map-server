@@ -171,6 +171,8 @@ class Generator():
 
                 case _:
                     gdf = self.fetcher.get_osmGDF(tags=layer_info['tags'],)
+                    # if gdf.
+                    
                     self.map_content.append(
                         drawAreas(gdf, id=layer_name, fill=layer_info['fill']))
 

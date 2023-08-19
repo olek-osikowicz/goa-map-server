@@ -101,17 +101,18 @@ class Fetcher():
         map_space_center_y = self.map_space_dims[1] + self.map_space_dims[3]/2
         log.debug(f"{map_space_center_x = }, {map_space_center_y = }")
 
-        gdf['geometry'] = (gdf['geometry']
-            .translate(xoff=-self.centroid_mercator.x, yoff=-self.centroid_mercator.y)
+        if not gdf.geometry.empty:
+            gdf['geometry'] = (gdf['geometry']
+                .translate(xoff=-self.centroid_mercator.x, yoff=-self.centroid_mercator.y)
 
-            # inverse Y- axis
-            .scale(xfact=1, yfact=-1, zfact=1.0, origin=(0, 0))
+                # inverse Y- axis
+                .scale(xfact=1, yfact=-1, zfact=1.0, origin=(0, 0))
 
-            # scale to fit poster
-            .scale(xfact=self.s, yfact=self.s, zfact=1.0, origin=(0, 0))
+                # scale to fit poster
+                .scale(xfact=self.s, yfact=self.s, zfact=1.0, origin=(0, 0))
 
-            # shift to poster center
-            .translate(xoff=map_space_center_x, yoff=map_space_center_y))
+                # shift to poster center
+                .translate(xoff=map_space_center_x, yoff=map_space_center_y))
         
         return gdf
 

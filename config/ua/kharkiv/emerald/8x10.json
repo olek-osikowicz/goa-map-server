@@ -1,0 +1,122 @@
+{
+    "bbox": [ 
+        36.176955, 
+        49.961298,
+        36.270109,
+        50.026806
+    ],
+    "dir_name": "kharkiv",
+    "poster_name": "emerald 8x10",
+    "template": {
+        "width": 2400,
+        "height": 3000,
+        "background_fill": "#f3f3f3",
+        "map_frame": {
+            "fill": "#f3f3f3",
+            "offset": 150,
+            "width": 0
+        },
+        "bottom_area_height": 300,
+        "text_boxes": [
+            {
+                "x": 1200,
+                "y": 2603,
+                "text": "Kharkiv",
+                "font_size": 180,
+                "font_family": "Zen Kaku Gothic New",
+                "fill": "#111111"
+            },
+            {
+                "x": 1200,
+                "y": 2769,
+                "text": "Ukraine",
+                "font_size": 100,
+                "font_family": "Zen Kaku Gothic New",
+                "fill": "#111111"
+            },
+            {
+                "x": 2086,
+                "y": 2828,
+                "text": "Map data from OpenStreetMap",
+                "font_size": 24,
+                "font_family": "Zen Kaku Gothic New",
+                "fill": "#b0b0b0"
+            }
+        ]
+    },
+    "map_layers": {
+        "land": {
+            "fill": "#338585"
+        },
+        "green": {
+            "fill": "#266464",
+            "tags": {
+                "leisure": "park",
+                "landuse": ["forest", "village_green"],
+                "natural": "wood"
+            }
+        },
+        "water": {
+            "fill": "#f3f3f3"
+        },
+        "pier": {
+            "fill": "#338585",
+            "tags": {
+                "man_made": "pier"
+            }
+        },
+        "streets": {
+            "base_width": 0.667,
+            "types": {
+                "footway": {
+                    "stroke": "#d7efef",
+                    "relative_width": 1
+                },
+                "pedestrian": {
+                    "stroke": "#d7efef",
+                    "relative_width": 2
+                },
+                "unclassified": {
+                    "stroke": "#def2f2",
+                    "relative_width": 2
+                },
+                "service": {
+                    "stroke": "#def2f2",
+                    "relative_width": 2
+                },
+                "living_street": {
+                    "stroke": "#def2f2",
+                    "relative_width": 3
+                },
+                "residential": {
+                    "stroke": "#def2f2",
+                    "relative_width": 3
+                },
+                "cycleway": {
+                    "stroke": "#d7efef",
+                    "relative_width": 3.5
+                },
+                "tertiary": {
+                    "stroke": "#def2f2",
+                    "relative_width": 3.5
+                },
+                "secondary": {
+                    "stroke": "#def2f2",
+                    "relative_width": 4
+                },
+                "primary": {
+                    "stroke": "#def2f2",
+                    "relative_width": 4.5
+                },
+                "trunk": {
+                    "stroke": "#def2f2",
+                    "relative_width": 5
+                },
+                "motorway": {
+                    "stroke": "#def2f2",
+                    "relative_width": 5
+                }
+            }
+        }
+    }
+}
