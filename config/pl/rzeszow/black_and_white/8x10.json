@@ -23,7 +23,7 @@
                 "y": 2603,
                 "text": "Rzeszów",
                 "font_size": 180,
-                "font_family": "Roboto-Light",
+                "font_family": "Montserrat",
                 "fill": "#111111"
             },
             {
@@ -31,7 +31,7 @@
                 "y": 2769,
                 "text": "Polska",
                 "font_size": 100,
-                "font_family": "Roboto-Light",
+                "font_family": "Montserrat",
                 "fill": "#111111"
             },
             {
@@ -39,7 +39,7 @@
                 "y": 2828,
                 "text": "Map data from OpenStreetMap",
                 "font_size": 24,
-                "font_family": "Roboto-Light",
+                "font_family": "Montserrat",
                 "fill": "#b0b0b0"
             }
         ]
