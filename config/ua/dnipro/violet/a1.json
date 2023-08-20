@@ -1,0 +1,122 @@
+{
+    "bbox": [
+        34.9342135,
+        48.3772805,
+        35.1216759,
+        48.5183308
+    ],
+    "dir_name": "dnipro",
+    "poster_name": "violet a1",
+    "template": {
+        "width": 7016,
+        "height": 9933,
+        "background_fill": "#f3f3f3",
+        "map_frame": {
+            "fill": "#f3f3f3",
+            "offset": 150,
+            "width": 0
+        },
+        "bottom_area_height": 400,
+        "text_boxes": [
+            {
+                "x": 3508,
+                "y": 9447,
+                "text": "Dnipro",
+                "font_size": 240,
+                "font_family": "Montserrat",
+                "fill": "#111111"
+            },
+            {
+                "x": 3508,
+                "y": 9657,
+                "text": "Ukraine",
+                "font_size": 120,
+                "font_family": "Montserrat",
+                "fill": "#111111"
+            },
+            {
+                "x": 6702,
+                "y": 9783,
+                "text": "Map data from OpenStreetMap",
+                "font_size": 24,
+                "font_family": "Montserrat",
+                "fill": "#b0b0b0"
+            }
+        ]
+    },
+    "map_layers": {
+        "land": {
+            "fill": "#976a9e"
+        },
+        "green": {
+            "fill": "#8c5882",
+            "tags": {
+                "leisure": "park",
+                "landuse": ["forest", "village_green"],
+                "natural": "wood"
+            }
+        },
+        "water": {
+            "fill": "#e683b6"
+        },
+        "pier": {
+            "fill": "#976a9e",
+            "tags": {
+                "man_made": "pier"
+            }
+        },
+        "streets": {
+            "base_width": 2,
+            "types": {
+                "footway": {
+                    "stroke": "#ebe3a9",
+                    "relative_width": 1
+                },
+                "pedestrian": {
+                    "stroke": "#ebe3a9",
+                    "relative_width": 2
+                },
+                "unclassified": {
+                    "stroke": "#ebe3a9",
+                    "relative_width": 2
+                },
+                "service": {
+                    "stroke": "#ebe3a9",
+                    "relative_width": 2
+                },
+                "living_street": {
+                    "stroke": "#ebe3a9",
+                    "relative_width": 3
+                },
+                "residential": {
+                    "stroke": "#ebe3a9",
+                    "relative_width": 3
+                },
+                "cycleway": {
+                    "stroke": "#ebe3a9",
+                    "relative_width": 3.5
+                },
+                "tertiary": {
+                    "stroke": "#ebe3a9",
+                    "relative_width": 3.5
+                },
+                "secondary": {
+                    "stroke": "#ebe3a9",
+                    "relative_width": 4
+                },
+                "primary": {
+                    "stroke": "#ebe3a9",
+                    "relative_width": 4.5
+                },
+                "trunk": {
+                    "stroke": "#ebe3a9",
+                    "relative_width": 5
+                },
+                "motorway": {
+                    "stroke": "#ebe3a9",
+                    "relative_width": 5
+                }
+            }
+        }
+    }
+}

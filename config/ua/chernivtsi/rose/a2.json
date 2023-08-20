@@ -1,0 +1,122 @@
+{
+    "bbox": [
+        25.9093406,
+        48.2592607,
+        25.9636096,
+        48.3136668
+    ],
+    "dir_name": "chernivtsi",
+    "poster_name": "rose a2",
+    "template": {
+        "width": 4960,
+        "height": 7016,
+        "background_fill": "#f3f3f3",
+        "map_frame": {
+            "fill": "#f3f3f3",
+            "offset": 150,
+            "width": 0
+        },
+        "bottom_area_height": 400,
+        "text_boxes": [
+            {
+                "x": 2480,
+                "y": 6530,
+                "text": "Chernivtsi",
+                "font_size": 240,
+                "font_family": "Montserrat",
+                "fill": "#111111"
+            },
+            {
+                "x": 2480,
+                "y": 6740,
+                "text": "Ukraine",
+                "font_size": 120,
+                "font_family": "Montserrat",
+                "fill": "#111111"
+            },
+            {
+                "x": 4646,
+                "y": 6866,
+                "text": "Map data from OpenStreetMap",
+                "font_size": 24,
+                "font_family": "Montserrat",
+                "fill": "#b0b0b0"
+            }
+        ]
+    },
+    "map_layers": {
+        "land": {
+            "fill": "#d9adb8"
+        },
+        "green": {
+            "fill": "#baa9ae",
+            "tags": {
+                "leisure": "park",
+                "landuse": ["forest", "village_green"],
+                "natural": "wood"
+            }
+        },
+        "water": {
+            "fill": "#c1dedc"
+        },
+        "pier": {
+            "fill": "#d9adb8",
+            "tags": {
+                "man_made": "pier"
+            }
+        },
+        "streets": {
+            "base_width": 1.5,
+            "types": {
+                "footway": {
+                    "stroke": "#faf7f8",
+                    "relative_width": 1
+                },
+                "pedestrian": {
+                    "stroke": "#faf7f8",
+                    "relative_width": 2
+                },
+                "unclassified": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 2
+                },
+                "service": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 2
+                },
+                "living_street": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 3
+                },
+                "residential": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 3
+                },
+                "cycleway": {
+                    "stroke": "#faf7f8",
+                    "relative_width": 3.5
+                },
+                "tertiary": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 3.5
+                },
+                "secondary": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 4
+                },
+                "primary": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 4.5
+                },
+                "trunk": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 5
+                },
+                "motorway": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 5
+                }
+            }
+        }
+    }
+}
