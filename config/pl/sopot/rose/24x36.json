@@ -1,0 +1,122 @@
+{
+    "bbox": [
+        18.5416707,
+        54.4239884,
+        18.5981617,
+        54.4663977
+    ],
+    "dir_name": "sopot",
+    "poster_name": "rose 24x36",
+    "template": {
+        "width": 7200,
+        "height": 10800,
+        "background_fill": "#f3f3f3",
+        "map_frame": {
+            "fill": "#f3f3f3",
+            "offset": 150,
+            "width": 0
+        },
+        "bottom_area_height": 400,
+        "text_boxes": [
+            {
+                "x": 3600,
+                "y": 10314,
+                "text": "Sopot",
+                "font_size": 240,
+                "font_family": "Montserrat",
+                "fill": "#111111"
+            },
+            {
+                "x": 3600,
+                "y": 10524,
+                "text": "Polska",
+                "font_size": 120,
+                "font_family": "Montserrat",
+                "fill": "#111111"
+            },
+            {
+                "x": 6886,
+                "y": 10628,
+                "text": "Map data from OpenStreetMap",
+                "font_size": 24,
+                "font_family": "Montserrat",
+                "fill": "#b0b0b0"
+            }
+        ]
+    },
+    "map_layers": {
+        "land": {
+            "fill": "#d9adb8"
+        },
+        "green": {
+            "fill": "#baa9ae",
+            "tags": {
+                "leisure": "park",
+                "landuse": ["forest", "village_green"],
+                "natural": "wood"
+            }
+        },
+        "water": {
+            "fill": "#c1dedc"
+        },
+        "pier": {
+            "fill": "#d9adb8",
+            "tags": {
+                "man_made": "pier"
+            }
+        },
+        "streets": {
+            "base_width": 2,
+            "types": {
+                "footway": {
+                    "stroke": "#faf7f8",
+                    "relative_width": 1
+                },
+                "pedestrian": {
+                    "stroke": "#faf7f8",
+                    "relative_width": 2
+                },
+                "unclassified": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 2
+                },
+                "service": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 2
+                },
+                "living_street": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 3
+                },
+                "residential": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 3
+                },
+                "cycleway": {
+                    "stroke": "#faf7f8",
+                    "relative_width": 3.5
+                },
+                "tertiary": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 3.5
+                },
+                "secondary": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 4
+                },
+                "primary": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 4.5
+                },
+                "trunk": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 5
+                },
+                "motorway": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 5
+                }
+            }
+        }
+    }
+}
