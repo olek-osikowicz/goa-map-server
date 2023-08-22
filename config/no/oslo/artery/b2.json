@@ -1,0 +1,122 @@
+{
+    "bbox": [
+        10.6138340,
+        59.8497528,
+        10.8383505,
+        59.9815908
+    ],
+    "dir_name": "oslo",
+    "poster_name": "artery b2",
+    "template": {
+        "width": 5906,
+        "height": 8350,
+        "background_fill": "#f3f3f3",
+        "map_frame": {
+            "fill": "#f3f3f3",
+            "offset": 150,
+            "width": 0
+        },
+        "bottom_area_height": 400,
+        "text_boxes": [
+            {
+                "x": 2953,
+                "y": 7864,
+                "text": "Oslo",
+                "font_size": 240,
+                "font_family": "Zen Kaku Gothic New",
+                "fill": "#111111"
+            },
+            {
+                "x": 2953,
+                "y": 8074,
+                "text": "Norge",
+                "font_size": 120,
+                "font_family": "Zen Kaku Gothic New",
+                "fill": "#111111"
+            },
+            {
+                "x": 5592,
+                "y": 8200,
+                "text": "Map data from OpenStreetMap",
+                "font_size": 24,
+                "font_family": "Zen Kaku Gothic New",
+                "fill": "#b0b0b0"
+            }
+        ]
+    },
+    "map_layers": {
+        "land": {
+            "fill": "#f3f3f3"
+        },
+        "green": {
+            "fill": "#cccccf",
+            "tags": {
+                "leisure": "park",
+                "landuse": ["forest", "village_green"],
+                "natural": "wood"
+            }
+        },
+        "water": {
+            "fill": "#410b17"
+        },
+        "pier": {
+            "fill": "#f3f3f3",
+            "tags": {
+                "man_made": "pier"
+            }
+        },
+        "streets": {
+            "base_width": 1.5,
+            "types": {
+                "footway": {
+                    "stroke": "#981b1b",
+                    "relative_width": 1
+                },
+                "pedestrian": {
+                    "stroke": "#981b1b",
+                    "relative_width": 2
+                },
+                "unclassified": {
+                    "stroke": "#981b1b",
+                    "relative_width": 2
+                },
+                "service": {
+                    "stroke": "#981b1b",
+                    "relative_width": 2
+                },
+                "living_street": {
+                    "stroke": "#981b1b",
+                    "relative_width": 3
+                },
+                "residential": {
+                    "stroke": "#981b1b",
+                    "relative_width": 3
+                },
+                "cycleway": {
+                    "stroke": "#981b1b",
+                    "relative_width": 3.5
+                },
+                "tertiary": {
+                    "stroke": "#981b1b",
+                    "relative_width": 3.5
+                },
+                "secondary": {
+                    "stroke": "#981b1b",
+                    "relative_width": 4
+                },
+                "primary": {
+                    "stroke": "#981b1b",
+                    "relative_width": 4.5
+                },
+                "trunk": {
+                    "stroke": "#981b1b",
+                    "relative_width": 5
+                },
+                "motorway": {
+                    "stroke": "#981b1b",
+                    "relative_width": 5
+                }
+            }
+        }
+    }
+}
