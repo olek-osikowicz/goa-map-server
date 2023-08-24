@@ -3,7 +3,7 @@ from pathlib import Path
 import logging as log
 import subprocess
 import drawsvg as dw
-from goamapper.drawer import drawAreas, drawWays
+from goamapper.drawer import drawAreas, drawWays, drawCircut
 from goamapper.models import Poster
 from goamapper.fetcher import Fetcher
 from goamapper.recolorer import recolour
@@ -168,6 +168,12 @@ class Generator():
                     gdf = self.fetcher.get_streetsGDF(street_types)
                     self.map_content.append(
                         drawWays(gdf, layer_info, id=layer_name))
+                    
+                case "circut":
+                    gdf = self.fetcher.get_f1GDF(layer_info['name'])
+                    self.map_content.append(
+                        drawCircut(gdf, layer_info)
+                    )
 
                 case _:
                     gdf = self.fetcher.get_osmGDF(tags=layer_info['tags'],)

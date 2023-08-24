@@ -50,6 +50,19 @@ def drawAreas(gdf: GeoDataFrame, fill='blue', id='water') -> dw.Group:
 
     return group
 
+def drawCircut(gdf: GeoDataFrame, layer_info: dict):
+    # width = layer_info['width']
+    # stroke = layer_info['stroke']
+    group = dw.Group(id="circut", fill="none", close=False,
+                    stroke_linecap='round', stroke_linejoin='round',**layer_info)
+    
+
+    for geom in gdf.geometry:
+        p = dw.Path()
+        p = drawPath(p, geom)
+        group.append(p)
+
+    return group
 
 def drawWays(gdf: GeoDataFrame, layer_info: dict, id='ways'):
 
