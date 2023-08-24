@@ -1,12 +1,12 @@
 {
     "bbox": [
-        49.812375,
-        40.310862,
-        49.900849,
-        40.420665
+        7.404180,
+        43.719337,
+        7.440855,
+        43.747913
     ],
-    "dir_name": "f1_baku",
-    "poster_name": "black_and_white a3",
+    "dir_name": "f1_monaco",
+    "poster_name": "black_and_white_red a3",
     "template": {
         "width": 3508,
         "height": 4960,
@@ -21,7 +21,7 @@
             {
                 "x": 1754,
                 "y": 4474,
-                "text": "Baku",
+                "text": "Monaco",
                 "font_size": 240,
                 "font_family": "Montserrat",
                 "fill": "#111111"
@@ -29,7 +29,7 @@
             {
                 "x": 1754,
                 "y": 4684,
-                "text": "F1",
+                "text": "Street Circuit",
                 "font_size": 120,
                 "font_family": "Montserrat",
                 "fill": "#111111"
@@ -122,8 +122,8 @@
             }
         },
         "circut": {
-            "name": "Baku City Circuit",
-            "stroke": "#ff0000",
+            "name": "Circuit de Monaco",
+            "stroke": "#a62929",
             "stroke_width": 10
         }
     }

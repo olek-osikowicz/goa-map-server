@@ -1,15 +1,15 @@
 {
     "bbox": [
-        7.404180,
-        43.719337,
-        7.440855,
-        43.747913
+        49.8250442,
+        40.3335274,
+        49.8632187,
+        40.4108501
     ],
-    "dir_name": "f1_monaco",
-    "poster_name": "black_and_white a3",
+    "dir_name": "f1_baku",
+    "poster_name": "black_and_white_red a2",
     "template": {
-        "width": 3508,
-        "height": 4960,
+        "width": 4960,
+        "height": 7016,
         "background_fill": "#f3f3f3",
         "map_frame": {
             "fill": "#f3f3f3",
@@ -19,24 +19,24 @@
         "bottom_area_height": 400,
         "text_boxes": [
             {
-                "x": 1754,
-                "y": 4474,
-                "text": "Monaco",
+                "x": 2480,
+                "y": 6530,
+                "text": "Baku",
                 "font_size": 240,
                 "font_family": "Montserrat",
                 "fill": "#111111"
             },
             {
-                "x": 1754,
-                "y": 4684,
-                "text": "F1",
+                "x": 2480,
+                "y": 6740,
+                "text": "Street Circuit",
                 "font_size": 120,
                 "font_family": "Montserrat",
                 "fill": "#111111"
             },
             {
-                "x": 3194,
-                "y": 4810,
+                "x": 4646,
+                "y": 6866,
                 "text": "Map data from OpenStreetMap",
                 "font_size": 24,
                 "font_family": "Montserrat",
@@ -69,7 +69,7 @@
             }
         },
         "streets": {
-            "base_width": 1,
+            "base_width": 1.5,
             "types": {
                 "footway": {
                     "stroke": "#2e2d2d",
@@ -122,9 +122,9 @@
             }
         },
         "circut": {
-            "name": "Circuit de Monaco",
-            "stroke": "#ff0000",
-            "stroke_width": 10
+            "name": "Baku City Circuit",
+            "stroke": "#a62929",
+            "stroke_width": 30
         }
     }
 }
