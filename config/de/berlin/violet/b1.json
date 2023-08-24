@@ -1,9 +1,9 @@
 {
     "bbox": [
-        13.2752586,
-        52.3975008,
-        13.5309405,
-        52.5991741
+        13.2952586,
+        52.4175008,
+        13.5109405,
+        52.5791741
     ],
     "dir_name": "berlin",
     "poster_name": "violet b1",
@@ -68,10 +68,7 @@
         "streets": {
             "base_width": 2,
             "types": {
-                "footway": {
-                    "stroke": "#ebe3a9",
-                    "relative_width": 1
-                },
+                
                 "pedestrian": {
                     "stroke": "#ebe3a9",
                     "relative_width": 2
