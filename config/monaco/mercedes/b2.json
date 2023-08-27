@@ -6,7 +6,7 @@
         43.748170
     ],
     "dir_name": "f1_monaco",
-    "poster_name": "red bull b2",
+    "poster_name": "mercedes b2",
     "template": {
         "width": 5906,
         "height": 8350,
@@ -46,10 +46,10 @@
     },
     "map_layers": {
         "land": {
-            "fill": "#292970"
+            "fill": "#333333"
         },
         "green": {
-            "fill": "#1e1e46",
+            "fill": "#4c4c4c",
             "tags": {
                 "leisure": "park",
                 "landuse": [
@@ -63,7 +63,7 @@
             "fill": "#f3f3f3"
         },
         "pier": {
-            "fill": "#292970",
+            "fill": "#333333",
             "tags": {
                 "man_made": "pier"
             }
@@ -72,58 +72,58 @@
             "base_width": 1,
             "types": {
                 "footway": {
-                    "stroke": "#cccc66",
+                    "stroke": "#f3f3f3",
                     "relative_width": 1
                 },
                 "pedestrian": {
-                    "stroke": "#cccc66",
+                    "stroke": "#f3f3f3",
                     "relative_width": 2
                 },
                 "unclassified": {
-                    "stroke": "#cccc66",
+                    "stroke": "#f3f3f3",
                     "relative_width": 2
                 },
                 "service": {
-                    "stroke": "#cccc66",
+                    "stroke": "#f3f3f3",
                     "relative_width": 2
                 },
                 "living_street": {
-                    "stroke": "#cccc66",
+                    "stroke": "#f3f3f3",
                     "relative_width": 3
                 },
                 "residential": {
-                    "stroke": "#cccc66",
+                    "stroke": "#f3f3f3",
                     "relative_width": 3
                 },
                 "cycleway": {
-                    "stroke": "#cccc66",
+                    "stroke": "#f3f3f3",
                     "relative_width": 3.5
                 },
                 "tertiary": {
-                    "stroke": "#cccc66",
+                    "stroke": "#f3f3f3",
                     "relative_width": 3.5
                 },
                 "secondary": {
-                    "stroke": "#cccc66",
+                    "stroke": "#f3f3f3",
                     "relative_width": 4
                 },
                 "primary": {
-                    "stroke": "#cccc66",
+                    "stroke": "#f3f3f3",
                     "relative_width": 4.5
                 },
                 "trunk": {
-                    "stroke": "#cccc66",
+                    "stroke": "#f3f3f3",
                     "relative_width": 5
                 },
                 "motorway": {
-                    "stroke": "#cccc66",
+                    "stroke": "#f3f3f3",
                     "relative_width": 5
                 }
             }
         },
         "circut": {
             "name": "Circuit de Monaco",
-            "stroke": "#aa0909",
+            "stroke": "#40c8ae",
             "stroke_width": 20
         }
     }
