@@ -1,11 +1,7 @@
 {
-    "bbox": [
-        17.054374,
-        48.106768,
-        17.152722,
-        48.182129
-    ],
+
     "dir_name": "bratislava",
+    "radius": "15000",
     "poster_name": "rose a3",
     "template": {
         "width": 3508,

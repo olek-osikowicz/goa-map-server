@@ -149,7 +149,7 @@ class Generator():
     def create_map_content(self):
         log.info("Creating map content")
         self._init_map_content()
-        self.fetcher = Fetcher(self.poster.bbox, self.map_space_dims)
+        self.fetcher = Fetcher(self.poster.dir_name, self.map_space_dims, self.poster.radius)
 
         for layer_name, layer_info in self.poster.map_layers.items():
             log.info(f"Creating layer: {layer_name}")

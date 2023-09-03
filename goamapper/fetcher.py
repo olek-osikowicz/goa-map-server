@@ -30,17 +30,25 @@ WATER_TAGS = {
 
 
 class Fetcher():
-    def __init__(self, bbox_cords: list, map_space_dims: list) -> None:
+    def __init__(self, place_name: str, map_space_dims: list, radius: int = 10_000) -> None:
 
         #Process bbox
-        self.bbox_cords = bbox_cords
-        log.debug(f"{bbox_cords = }")
-        self.bbox_pol = box(*bbox_cords)
-        self.bbox_gdf = GeoDataFrame(geometry=[self.bbox_pol],
-                                     crs=GEO_2D_CRS).to_crs(MERCATOR_CRS)
+
+        point = ox.geocode(place_name)
+        gdf = GeoDataFrame(geometry=[Point(point[::-1])], crs=GEO_2D_CRS)
+        gdf = gdf.to_crs(MERCATOR_CRS)
+
+        gdf = gdf.buffer(radius, cap_style=3)
+        self.bbox_gdf = gdf
 
         self.mercator_bbox = self.bbox_gdf.total_bounds
         self.centroid_mercator = self.bbox_gdf.geometry.centroid.iloc[0]
+
+        gdf = gdf.to_crs(GEO_2D_CRS)
+
+        self.bbox_cords = gdf.total_bounds
+        log.debug(f"{self.bbox_cords = }")
+        self.bbox_pol = box(*self.bbox_cords)
 
         self.map_space_dims = map_space_dims
         self.set_scale()
@@ -82,6 +90,7 @@ class Fetcher():
     def get_osmGDF(self, tags, scale=True):
 
         try:
+        
             osm_gdf = ox.geometries_from_polygon(
                 self.bbox_pol, tags=tags)
         except Exception:

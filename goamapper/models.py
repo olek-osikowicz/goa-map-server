@@ -22,8 +22,8 @@ class Template(BaseModel):
     text_boxes: list[TextBox] | None
 
 class Poster(BaseModel):
-    bbox: list[float]
     dir_name: str
+    radius: int
     poster_name: str
     template: Template
     map_layers: dict
