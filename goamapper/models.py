@@ -23,8 +23,8 @@ class Template(BaseModel):
 
 class Poster(BaseModel):
     bbox: list[float] = None
-    place_name: str
-    radius: int
+    dir_name: str
+    radius: int = None
     poster_name: str
     template: Template
     map_layers: dict
