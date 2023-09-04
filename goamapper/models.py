@@ -17,13 +17,14 @@ class Template(BaseModel):
     width: int
     height: int
     background_fill: str
-    map_frame: MapFrame | None
+    map_frame: MapFrame = None
     bottom_area_height: int
-    text_boxes: list[TextBox] | None
+    text_boxes: list[TextBox] = None
 
 class Poster(BaseModel):
-    dir_name: str
-    radius: int
+    bbox: list[float] = None
+    place_name: str
+    radius: int = None
     poster_name: str
     template: Template
     map_layers: dict

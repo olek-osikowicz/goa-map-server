@@ -30,10 +30,31 @@ WATER_TAGS = {
 
 
 class Fetcher():
-    def __init__(self, place_name: str, map_space_dims: list, radius: int = 10_000) -> None:
+    def __init__(self, map_space_dims: list, bbox: list = None, place_name: str = None, radius: int = 10_000) -> None:
 
-        #Process bbox
+        if bbox:
+            self.set_area_from_bbox(bbox)
+        elif place_name:
+            self.set_area_from_place_and_radius(place_name, radius)
+        else:
+            raise ValueError("Invalid area to be mapped!")
 
+
+        self.map_space_dims = map_space_dims
+        self.set_scale()
+
+    def set_area_from_bbox(self, bbox_cords):
+        self.bbox_cords = bbox_cords
+        log.debug(f"{bbox_cords = }")
+        self.bbox_pol = box(*bbox_cords)
+        self.bbox_gdf = GeoDataFrame(geometry=[self.bbox_pol],
+                                     crs=GEO_2D_CRS).to_crs(MERCATOR_CRS)
+
+        self.mercator_bbox = self.bbox_gdf.total_bounds
+        self.centroid_mercator = self.bbox_gdf.geometry.centroid.iloc[0]
+
+
+    def set_area_from_place_and_radius(self, place_name: str, radius: int):
         point = ox.geocode(place_name)
         gdf = GeoDataFrame(geometry=[Point(point[::-1])], crs=GEO_2D_CRS)
         gdf = gdf.to_crs(MERCATOR_CRS)
@@ -50,8 +71,6 @@ class Fetcher():
         log.debug(f"{self.bbox_cords = }")
         self.bbox_pol = box(*self.bbox_cords)
 
-        self.map_space_dims = map_space_dims
-        self.set_scale()
 
     def mergeGeometries(self, gdf: GeoDataFrame):
         shape = gdf.geometry.unary_union
