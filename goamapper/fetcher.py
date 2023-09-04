@@ -33,8 +33,10 @@ class Fetcher():
     def __init__(self, map_space_dims: list, bbox: list = None, place_name: str = None, radius: int = 10_000) -> None:
 
         if bbox:
+            log.debug("Using explicit bouding box")
             self.set_area_from_bbox(bbox)
         elif place_name:
+            log.debug("Geocoding bouding box")
             self.set_area_from_place_and_radius(place_name, radius)
         else:
             raise ValueError("Invalid area to be mapped!")

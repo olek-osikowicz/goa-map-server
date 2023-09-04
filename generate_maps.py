@@ -29,5 +29,5 @@ def main():
 
 if __name__ == "__main__":
 
-    log.basicConfig(format='%(levelname)s:%(asctime)s: %(message)s',level=log.INFO)
+    log.basicConfig(format='%(levelname)s:%(asctime)s: %(message)s',level=log.DEBUG)
     main() 
