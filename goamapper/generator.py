@@ -26,7 +26,7 @@ class Generator():
         self.template = None
 
     def prepare_folders(self):
-        dir_path = RENDERS_DIR / self.poster.dir_name
+        dir_path = RENDERS_DIR / self.poster.place_name
         dir_path.mkdir(exist_ok=True)  # ensure directory exists
 
         svg_dir_path = dir_path / 'svg'
@@ -40,15 +40,15 @@ class Generator():
     def generate_svg(self):
 
         log.debug(
-            f"Generating {self.poster.dir_name} in {self.poster.poster_name}")
+            f"Generating {self.poster.place_name} in {self.poster.poster_name}")
 
         if self.svg_file_path.exists() and not self.overwrite:
             log.info(
-                f"{self.poster.dir_name} in {self.poster.poster_name} already exists")
+                f"{self.poster.place_name} in {self.poster.poster_name} already exists")
 
         else: #generate from scratch
             log.info(
-                f"{self.poster.dir_name} in {self.poster.poster_name} doenst exist yet")
+                f"{self.poster.place_name} in {self.poster.poster_name} doenst exist yet")
             self.generate_from_scratch()
 
     def save_png(self, max_size: int | None = None):
@@ -149,7 +149,7 @@ class Generator():
     def create_map_content(self):
         log.info("Creating map content")
         self._init_map_content()
-        self.fetcher = Fetcher(self.poster.bbox, self.map_space_dims)
+        self.fetcher = Fetcher(self.map_space_dims, self.poster.bbox, self.poster.place_name, self.poster.radius)
 
         for layer_name, layer_info in self.poster.map_layers.items():
             log.info(f"Creating layer: {layer_name}")

@@ -1,11 +1,7 @@
 {
-    "bbox": [
-        14.3800680,
-        50.0425149,
-        14.4588768,
-        50.1129164
-    ],
-    "dir_name": "prague",
+
+    "place_name": "prague",
+    "radius": "15000",
     "poster_name": "black_and_white b1",
     "template": {
         "width": 8350,
@@ -23,7 +19,7 @@
                 "y": 11325,
                 "text": "Praha",
                 "font_size": 240,
-                "font_family": "Montserrat",
+                "font_family": "Zen Kaku Gothic New",
                 "fill": "#111111"
             },
             {
@@ -31,7 +27,7 @@
                 "y": 11535,
                 "text": "Česká republika",
                 "font_size": 120,
-                "font_family": "Montserrat",
+                "font_family": "Zen Kaku Gothic New",
                 "fill": "#111111"
             },
             {
@@ -39,7 +35,7 @@
                 "y": 11661,
                 "text": "Map data from OpenStreetMap",
                 "font_size": 24,
-                "font_family": "Montserrat",
+                "font_family": "Zen Kaku Gothic New",
                 "fill": "#b0b0b0"
             }
         ]
@@ -100,7 +96,15 @@
                     "stroke": "#0a0a0a",
                     "relative_width": 3.5
                 },
+                "tertiary_link": {
+                    "stroke": "#0a0a0a",
+                    "relative_width": 3.5
+                },
                 "secondary": {
+                    "stroke": "#0a0a0a",
+                    "relative_width": 4
+                },
+                "secondary_link": {
                     "stroke": "#0a0a0a",
                     "relative_width": 4
                 },
@@ -108,11 +112,23 @@
                     "stroke": "#0a0a0a",
                     "relative_width": 4.5
                 },
+                "primary_link": {
+                    "stroke": "#0a0a0a",
+                    "relative_width": 4.5
+                },
                 "trunk": {
                     "stroke": "#0a0a0a",
                     "relative_width": 5
                 },
+                "trunk_link": {
+                    "stroke": "#0a0a0a",
+                    "relative_width": 5
+                },
                 "motorway": {
+                    "stroke": "#0a0a0a",
+                    "relative_width": 5
+                },
+                "motorway_link": {
                     "stroke": "#0a0a0a",
                     "relative_width": 5
                 }
