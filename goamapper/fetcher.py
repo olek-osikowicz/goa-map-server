@@ -111,8 +111,7 @@ class Fetcher():
     def get_osmGDF(self, tags, scale=True):
 
         try:
-        
-            osm_gdf = ox.geometries_from_polygon(
+            osm_gdf = ox.features_from_polygon(
                 self.bbox_pol, tags=tags)
         except Exception:
             #return empty geometry if something goes wrong
@@ -174,7 +173,7 @@ class Fetcher():
     def get_streetsGDF(self, street_types: list):
 
         tags = {"highway": street_types}
-        gdf = ox.geometries_from_polygon(self.bbox_pol, tags=tags)
+        gdf = ox.features_from_polygon(self.bbox_pol, tags=tags)
 
         def unpack_lists(highway_type):
             if isinstance(highway_type, str):

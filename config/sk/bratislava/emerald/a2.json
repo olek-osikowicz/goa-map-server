@@ -19,7 +19,7 @@
                 "y": 6530,
                 "text": "Bratislava",
                 "font_size": 240,
-                "font_family": "Zen Kaku Gothic New",
+                "font_family": "Montserrat",
                 "fill": "#111111"
             },
             {
@@ -27,7 +27,7 @@
                 "y": 6740,
                 "text": "Slovenská republika",
                 "font_size": 120,
-                "font_family": "Zen Kaku Gothic New",
+                "font_family": "Montserrat",
                 "fill": "#111111"
             },
             {
@@ -35,7 +35,7 @@
                 "y": 6866,
                 "text": "Map data from OpenStreetMap",
                 "font_size": 24,
-                "font_family": "Zen Kaku Gothic New",
+                "font_family": "Montserrat",
                 "fill": "#b0b0b0"
             }
         ]
