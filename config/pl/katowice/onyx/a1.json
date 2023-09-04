@@ -23,7 +23,7 @@
                 "y": 9447,
                 "text": "Katowice",
                 "font_size": 240,
-                "font_family": "Zen Kaku Gothic New",
+                "font_family": "Montserrat",
                 "fill": "#111111"
             },
             {
@@ -31,7 +31,7 @@
                 "y": 9657,
                 "text": "Polska",
                 "font_size": 120,
-                "font_family": "Zen Kaku Gothic New",
+                "font_family": "Montserrat",
                 "fill": "#111111"
             },
             {
@@ -39,7 +39,7 @@
                 "y": 9783,
                 "text": "Map data from OpenStreetMap",
                 "font_size": 24,
-                "font_family": "Zen Kaku Gothic New",
+                "font_family": "Montserrat",
                 "fill": "#b0b0b0"
             }
         ]
