@@ -115,6 +115,10 @@
                 "motorway": {
                     "stroke": "#262326",
                     "relative_width": 5
+                },
+                "motorway_link": {
+                    "stroke": "#262326",
+                    "relative_width": 5
                 }
             }
         }
