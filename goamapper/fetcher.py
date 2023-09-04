@@ -98,7 +98,7 @@ class Fetcher():
 
     def get_f1GDF(self, name):
 
-        circut=f'relation["name"="{name}"];'
+        circut=f'wr["name"="{name}"];'
         url = "https://maps.mail.ru/osm/tools/overpass/api/interpreter"
         query = f"""[out:json];
             {circut}
