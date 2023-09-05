@@ -1,6 +1,6 @@
 {
     "bbox": [
-        23.8601130,
+        23.860113,
         54.8443106,
         23.9615525,
         54.9289094
@@ -52,7 +52,10 @@
             "fill": "#a19e95",
             "tags": {
                 "leisure": "park",
-                "landuse": ["forest", "village_green"],
+                "landuse": [
+                    "forest",
+                    "village_green"
+                ],
                 "natural": "wood"
             }
         },
@@ -113,6 +116,26 @@
                     "relative_width": 5
                 },
                 "motorway": {
+                    "stroke": "#b38872",
+                    "relative_width": 5
+                },
+                "tertiary_link": {
+                    "stroke": "#b38872",
+                    "relative_width": 3.5
+                },
+                "secondary_link": {
+                    "stroke": "#b38872",
+                    "relative_width": 4
+                },
+                "primary_link": {
+                    "stroke": "#b38872",
+                    "relative_width": 4.5
+                },
+                "trunk_link": {
+                    "stroke": "#b38872",
+                    "relative_width": 5
+                },
+                "motorway_link": {
                     "stroke": "#b38872",
                     "relative_width": 5
                 }

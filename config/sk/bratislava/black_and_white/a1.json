@@ -29,7 +29,7 @@
             {
                 "x": 3508,
                 "y": 9657,
-                "text": "Slovenská republika",
+                "text": "Slovensk\u00e1 republika",
                 "font_size": 120,
                 "font_family": "Montserrat",
                 "fill": "#111111"
@@ -52,7 +52,10 @@
             "fill": "#e8e6e6",
             "tags": {
                 "leisure": "park",
-                "landuse": ["forest", "village_green"],
+                "landuse": [
+                    "forest",
+                    "village_green"
+                ],
                 "natural": "wood"
             }
         },
