@@ -2,7 +2,7 @@
     "bbox": [
         18.5156623,
         54.3240784,
-        18.7903520,
+        18.790352,
         54.5615349
     ],
     "dir_name": "tricity",
@@ -21,7 +21,7 @@
             {
                 "x": 3508,
                 "y": 9447,
-                "text": "Trójmiasto",
+                "text": "Tr\u00f3jmiasto",
                 "font_size": 240,
                 "font_family": "Montserrat",
                 "fill": "#111111"
@@ -52,7 +52,10 @@
             "fill": "#4b4b4b",
             "tags": {
                 "leisure": "park",
-                "landuse": ["forest", "village_green"],
+                "landuse": [
+                    "forest",
+                    "village_green"
+                ],
                 "natural": "wood"
             }
         },

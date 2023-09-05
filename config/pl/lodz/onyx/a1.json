@@ -1,8 +1,8 @@
 {
     "bbox": [
-        19.387679,  
+        19.387679,
         51.714258,
-        19.527679, 
+        19.527679,
         51.811163
     ],
     "dir_name": "lodz",
@@ -21,7 +21,7 @@
             {
                 "x": 3508,
                 "y": 9447,
-                "text": "Łódź",
+                "text": "\u0141\u00f3d\u017a",
                 "font_size": 240,
                 "font_family": "Montserrat",
                 "fill": "#111111"
@@ -52,7 +52,10 @@
             "fill": "#4b4b4b",
             "tags": {
                 "leisure": "park",
-                "landuse": ["forest", "village_green"],
+                "landuse": [
+                    "forest",
+                    "village_green"
+                ],
                 "natural": "wood"
             }
         },

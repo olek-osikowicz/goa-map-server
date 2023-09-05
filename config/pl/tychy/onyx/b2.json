@@ -2,7 +2,7 @@
     "bbox": [
         18.9464422,
         50.0763822,
-        19.0560170,
+        19.056017,
         50.1652291
     ],
     "dir_name": "tychy",
@@ -52,7 +52,10 @@
             "fill": "#4b4b4b",
             "tags": {
                 "leisure": "park",
-                "landuse": ["forest", "village_green"],
+                "landuse": [
+                    "forest",
+                    "village_green"
+                ],
                 "natural": "wood"
             }
         },

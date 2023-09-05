@@ -21,7 +21,7 @@
             {
                 "x": 2480,
                 "y": 6530,
-                "text": "Poznań",
+                "text": "Pozna\u0144",
                 "font_size": 240,
                 "font_family": "Montserrat",
                 "fill": "#111111"
@@ -52,7 +52,10 @@
             "fill": "#e8e6e6",
             "tags": {
                 "leisure": "park",
-                "landuse": ["forest", "village_green"],
+                "landuse": [
+                    "forest",
+                    "village_green"
+                ],
                 "natural": "wood"
             }
         },
@@ -113,6 +116,26 @@
                     "relative_width": 5
                 },
                 "motorway": {
+                    "stroke": "#0a0a0a",
+                    "relative_width": 5
+                },
+                "tertiary_link": {
+                    "stroke": "#0a0a0a",
+                    "relative_width": 3.5
+                },
+                "secondary_link": {
+                    "stroke": "#0a0a0a",
+                    "relative_width": 4
+                },
+                "primary_link": {
+                    "stroke": "#0a0a0a",
+                    "relative_width": 4.5
+                },
+                "trunk_link": {
+                    "stroke": "#0a0a0a",
+                    "relative_width": 5
+                },
+                "motorway_link": {
                     "stroke": "#0a0a0a",
                     "relative_width": 5
                 }

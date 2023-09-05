@@ -1,8 +1,8 @@
 {
     "bbox": [
-        19.387679,  
+        19.387679,
         51.714258,
-        19.527679, 
+        19.527679,
         51.811163
     ],
     "dir_name": "lodz",
@@ -21,7 +21,7 @@
             {
                 "x": 2953,
                 "y": 7864,
-                "text": "Łódź",
+                "text": "\u0141\u00f3d\u017a",
                 "font_size": 240,
                 "font_family": "Montserrat",
                 "fill": "#111111"
@@ -52,7 +52,10 @@
             "fill": "#78bde3",
             "tags": {
                 "leisure": "park",
-                "landuse": ["forest", "village_green"],
+                "landuse": [
+                    "forest",
+                    "village_green"
+                ],
                 "natural": "wood"
             }
         },
@@ -113,6 +116,26 @@
                     "relative_width": 5
                 },
                 "motorway": {
+                    "stroke": "#cce1f5",
+                    "relative_width": 5
+                },
+                "tertiary_link": {
+                    "stroke": "#cce1f5",
+                    "relative_width": 3.5
+                },
+                "secondary_link": {
+                    "stroke": "#cce1f5",
+                    "relative_width": 4
+                },
+                "primary_link": {
+                    "stroke": "#cce1f5",
+                    "relative_width": 4.5
+                },
+                "trunk_link": {
+                    "stroke": "#cce1f5",
+                    "relative_width": 5
+                },
+                "motorway_link": {
                     "stroke": "#cce1f5",
                     "relative_width": 5
                 }

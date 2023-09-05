@@ -2,7 +2,7 @@
     "bbox": [
         18.5156623,
         54.3240784,
-        18.7903520,
+        18.790352,
         54.5615349
     ],
     "dir_name": "tricity belmondo",
@@ -21,7 +21,7 @@
             {
                 "x": 2480,
                 "y": 6530,
-                "text": "Mordo to Trójmiasto",
+                "text": "Mordo to Tr\u00f3jmiasto",
                 "font_size": 240,
                 "font_family": "Montserrat",
                 "fill": "#111111"
@@ -29,7 +29,7 @@
             {
                 "x": 2480,
                 "y": 6740,
-                "text": "A nie São Paulo",
+                "text": "A nie S\u00e3o Paulo",
                 "font_size": 120,
                 "font_family": "Montserrat",
                 "fill": "#111111"
@@ -52,7 +52,10 @@
             "fill": "#cfc3c2",
             "tags": {
                 "leisure": "park",
-                "landuse": ["forest", "village_green"],
+                "landuse": [
+                    "forest",
+                    "village_green"
+                ],
                 "natural": "wood"
             }
         },
@@ -113,6 +116,26 @@
                     "relative_width": 5
                 },
                 "motorway": {
+                    "stroke": "#2b2a2a",
+                    "relative_width": 5
+                },
+                "tertiary_link": {
+                    "stroke": "#2b2a2a",
+                    "relative_width": 3.5
+                },
+                "secondary_link": {
+                    "stroke": "#2b2a2a",
+                    "relative_width": 4
+                },
+                "primary_link": {
+                    "stroke": "#2b2a2a",
+                    "relative_width": 4.5
+                },
+                "trunk_link": {
+                    "stroke": "#2b2a2a",
+                    "relative_width": 5
+                },
+                "motorway_link": {
                     "stroke": "#2b2a2a",
                     "relative_width": 5
                 }

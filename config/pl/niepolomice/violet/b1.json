@@ -1,7 +1,7 @@
 {
     "bbox": [
-        20.161300,
-        49.989982, 
+        20.1613,
+        49.989982,
         20.267369,
         50.076778
     ],
@@ -21,7 +21,7 @@
             {
                 "x": 4175,
                 "y": 11325,
-                "text": "Niepołomice",
+                "text": "Niepo\u0142omice",
                 "font_size": 240,
                 "font_family": "Montserrat",
                 "fill": "#111111"
@@ -52,7 +52,10 @@
             "fill": "#8c5882",
             "tags": {
                 "leisure": "park",
-                "landuse": ["forest", "village_green"],
+                "landuse": [
+                    "forest",
+                    "village_green"
+                ],
                 "natural": "wood"
             }
         },
@@ -113,6 +116,26 @@
                     "relative_width": 5
                 },
                 "motorway": {
+                    "stroke": "#f3f3f3",
+                    "relative_width": 5
+                },
+                "tertiary_link": {
+                    "stroke": "#f3f3f3",
+                    "relative_width": 3.5
+                },
+                "secondary_link": {
+                    "stroke": "#f3f3f3",
+                    "relative_width": 4
+                },
+                "primary_link": {
+                    "stroke": "#f3f3f3",
+                    "relative_width": 4.5
+                },
+                "trunk_link": {
+                    "stroke": "#f3f3f3",
+                    "relative_width": 5
+                },
+                "motorway_link": {
                     "stroke": "#f3f3f3",
                     "relative_width": 5
                 }

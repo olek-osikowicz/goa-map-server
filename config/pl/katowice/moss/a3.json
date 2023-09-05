@@ -3,7 +3,7 @@
         18.9841224,
         50.2251089,
         19.0583525,
-        50.2835780
+        50.283578
     ],
     "dir_name": "katowice",
     "poster_name": "moss a3",
@@ -52,7 +52,10 @@
             "fill": "#828F8F",
             "tags": {
                 "leisure": "park",
-                "landuse": ["forest", "village_green"],
+                "landuse": [
+                    "forest",
+                    "village_green"
+                ],
                 "natural": "wood"
             }
         },
@@ -113,6 +116,26 @@
                     "relative_width": 5
                 },
                 "motorway": {
+                    "stroke": "#222424",
+                    "relative_width": 5
+                },
+                "tertiary_link": {
+                    "stroke": "#222424",
+                    "relative_width": 3.5
+                },
+                "secondary_link": {
+                    "stroke": "#222424",
+                    "relative_width": 4
+                },
+                "primary_link": {
+                    "stroke": "#222424",
+                    "relative_width": 4.5
+                },
+                "trunk_link": {
+                    "stroke": "#222424",
+                    "relative_width": 5
+                },
+                "motorway_link": {
                     "stroke": "#222424",
                     "relative_width": 5
                 }

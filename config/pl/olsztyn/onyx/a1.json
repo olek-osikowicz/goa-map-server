@@ -1,9 +1,9 @@
 {
     "bbox": [
-        20.4485300,
+        20.44853,
         53.7416265,
         20.5244384,
-        53.7938700
+        53.79387
     ],
     "dir_name": "olsztyn",
     "poster_name": "onyx a1",
@@ -52,7 +52,10 @@
             "fill": "#4b4b4b",
             "tags": {
                 "leisure": "park",
-                "landuse": ["forest", "village_green"],
+                "landuse": [
+                    "forest",
+                    "village_green"
+                ],
                 "natural": "wood"
             }
         },

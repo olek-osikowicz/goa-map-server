@@ -1,9 +1,9 @@
 {
     "bbox": [
-        20.4485300,
+        20.44853,
         53.7416265,
         20.5244384,
-        53.7938700
+        53.79387
     ],
     "dir_name": "olsztyn",
     "poster_name": "emerald a2",
@@ -52,7 +52,10 @@
             "fill": "#266464",
             "tags": {
                 "leisure": "park",
-                "landuse": ["forest", "village_green"],
+                "landuse": [
+                    "forest",
+                    "village_green"
+                ],
                 "natural": "wood"
             }
         },
@@ -113,6 +116,26 @@
                     "relative_width": 5
                 },
                 "motorway": {
+                    "stroke": "#def2f2",
+                    "relative_width": 5
+                },
+                "tertiary_link": {
+                    "stroke": "#def2f2",
+                    "relative_width": 3.5
+                },
+                "secondary_link": {
+                    "stroke": "#def2f2",
+                    "relative_width": 4
+                },
+                "primary_link": {
+                    "stroke": "#def2f2",
+                    "relative_width": 4.5
+                },
+                "trunk_link": {
+                    "stroke": "#def2f2",
+                    "relative_width": 5
+                },
+                "motorway_link": {
                     "stroke": "#def2f2",
                     "relative_width": 5
                 }

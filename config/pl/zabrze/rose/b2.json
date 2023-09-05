@@ -1,6 +1,6 @@
 {
     "bbox": [
-        18.7459890,
+        18.745989,
         50.2482081,
         18.8327348,
         50.3566138
@@ -52,7 +52,10 @@
             "fill": "#baa9ae",
             "tags": {
                 "leisure": "park",
-                "landuse": ["forest", "village_green"],
+                "landuse": [
+                    "forest",
+                    "village_green"
+                ],
                 "natural": "wood"
             }
         },

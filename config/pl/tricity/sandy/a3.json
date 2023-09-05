@@ -2,7 +2,7 @@
     "bbox": [
         18.5156623,
         54.3240784,
-        18.7903520,
+        18.790352,
         54.5615349
     ],
     "dir_name": "tricity",
@@ -21,7 +21,7 @@
             {
                 "x": 1754,
                 "y": 4474,
-                "text": "Trójmiasto",
+                "text": "Tr\u00f3jmiasto",
                 "font_size": 240,
                 "font_family": "Montserrat",
                 "fill": "#111111"
@@ -52,7 +52,10 @@
             "fill": "#d6cec1",
             "tags": {
                 "leisure": "park",
-                "landuse": ["forest", "village_green"],
+                "landuse": [
+                    "forest",
+                    "village_green"
+                ],
                 "natural": "wood"
             }
         },
@@ -113,6 +116,26 @@
                     "relative_width": 5
                 },
                 "motorway": {
+                    "stroke": "#1b1c1c",
+                    "relative_width": 5
+                },
+                "tertiary_link": {
+                    "stroke": "#1b1c1c",
+                    "relative_width": 3.5
+                },
+                "secondary_link": {
+                    "stroke": "#1b1c1c",
+                    "relative_width": 4
+                },
+                "primary_link": {
+                    "stroke": "#1b1c1c",
+                    "relative_width": 4.5
+                },
+                "trunk_link": {
+                    "stroke": "#1b1c1c",
+                    "relative_width": 5
+                },
+                "motorway_link": {
                     "stroke": "#1b1c1c",
                     "relative_width": 5
                 }

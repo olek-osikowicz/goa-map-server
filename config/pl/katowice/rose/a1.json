@@ -3,7 +3,7 @@
         18.9841224,
         50.2251089,
         19.0583525,
-        50.2835780
+        50.283578
     ],
     "dir_name": "katowice",
     "poster_name": "rose a1",
@@ -52,7 +52,10 @@
             "fill": "#baa9ae",
             "tags": {
                 "leisure": "park",
-                "landuse": ["forest", "village_green"],
+                "landuse": [
+                    "forest",
+                    "village_green"
+                ],
                 "natural": "wood"
             }
         },
@@ -113,6 +116,26 @@
                     "relative_width": 5
                 },
                 "motorway": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 5
+                },
+                "tertiary_link": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 3.5
+                },
+                "secondary_link": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 4
+                },
+                "primary_link": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 4.5
+                },
+                "trunk_link": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 5
+                },
+                "motorway_link": {
                     "stroke": "#f5f0f1",
                     "relative_width": 5
                 }
