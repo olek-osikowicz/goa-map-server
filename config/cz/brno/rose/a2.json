@@ -29,7 +29,7 @@
             {
                 "x": 2480,
                 "y": 6740,
-                "text": "Česká republika",
+                "text": "\u010cesk\u00e1 republika",
                 "font_size": 120,
                 "font_family": "Montserrat",
                 "fill": "#111111"
@@ -52,7 +52,10 @@
             "fill": "#baa9ae",
             "tags": {
                 "leisure": "park",
-                "landuse": ["forest", "village_green"],
+                "landuse": [
+                    "forest",
+                    "village_green"
+                ],
                 "natural": "wood"
             }
         },
@@ -113,6 +116,26 @@
                     "relative_width": 5
                 },
                 "motorway": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 5
+                },
+                "tertiary_link": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 3.5
+                },
+                "secondary_link": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 4
+                },
+                "primary_link": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 4.5
+                },
+                "trunk_link": {
+                    "stroke": "#f5f0f1",
+                    "relative_width": 5
+                },
+                "motorway_link": {
                     "stroke": "#f5f0f1",
                     "relative_width": 5
                 }
