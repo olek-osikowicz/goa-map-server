@@ -2,7 +2,7 @@
     "bbox": [
         24.8587578,
         60.1099869,
-        24.9777680,
+        24.977768,
         60.2094463
     ],
     "dir_name": "your_city",
@@ -52,7 +52,10 @@
             "fill": "#baa9ae",
             "tags": {
                 "leisure": "park",
-                "landuse": ["forest", "village_green"],
+                "landuse": [
+                    "forest",
+                    "village_green"
+                ],
                 "natural": "wood"
             }
         },
