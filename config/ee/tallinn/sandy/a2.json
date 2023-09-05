@@ -2,7 +2,7 @@
     "bbox": [
         24.6357024,
         59.3688528,
-        24.8105010,
+        24.810501,
         59.5223099
     ],
     "dir_name": "tallinn",
@@ -52,7 +52,10 @@
             "fill": "#d6cec1",
             "tags": {
                 "leisure": "park",
-                "landuse": ["forest", "village_green"],
+                "landuse": [
+                    "forest",
+                    "village_green"
+                ],
                 "natural": "wood"
             }
         },
@@ -113,6 +116,26 @@
                     "relative_width": 5
                 },
                 "motorway": {
+                    "stroke": "#1b1c1c",
+                    "relative_width": 5
+                },
+                "tertiary_link": {
+                    "stroke": "#1b1c1c",
+                    "relative_width": 3.5
+                },
+                "secondary_link": {
+                    "stroke": "#1b1c1c",
+                    "relative_width": 4
+                },
+                "primary_link": {
+                    "stroke": "#1b1c1c",
+                    "relative_width": 4.5
+                },
+                "trunk_link": {
+                    "stroke": "#1b1c1c",
+                    "relative_width": 5
+                },
+                "motorway_link": {
                     "stroke": "#1b1c1c",
                     "relative_width": 5
                 }

@@ -3,7 +3,7 @@
         16.2975014,
         48.1265905,
         16.4722455,
-        48.2814200
+        48.28142
     ],
     "dir_name": "vienna",
     "poster_name": "brick b2",
@@ -29,7 +29,7 @@
             {
                 "x": 2953,
                 "y": 8074,
-                "text": "Österreich",
+                "text": "\u00d6sterreich",
                 "font_size": 120,
                 "font_family": "Montserrat",
                 "fill": "#111111"
@@ -52,7 +52,10 @@
             "fill": "#cfc3c2",
             "tags": {
                 "leisure": "park",
-                "landuse": ["forest", "village_green"],
+                "landuse": [
+                    "forest",
+                    "village_green"
+                ],
                 "natural": "wood"
             }
         },
@@ -113,6 +116,26 @@
                     "relative_width": 5
                 },
                 "motorway": {
+                    "stroke": "#2b2a2a",
+                    "relative_width": 5
+                },
+                "tertiary_link": {
+                    "stroke": "#2b2a2a",
+                    "relative_width": 3.5
+                },
+                "secondary_link": {
+                    "stroke": "#2b2a2a",
+                    "relative_width": 4
+                },
+                "primary_link": {
+                    "stroke": "#2b2a2a",
+                    "relative_width": 4.5
+                },
+                "trunk_link": {
+                    "stroke": "#2b2a2a",
+                    "relative_width": 5
+                },
+                "motorway_link": {
                     "stroke": "#2b2a2a",
                     "relative_width": 5
                 }
