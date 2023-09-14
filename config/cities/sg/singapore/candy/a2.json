@@ -69,7 +69,7 @@
             }
         },
         "streets": {
-            "base_width": 1.333,
+            "base_width": 0.667,
             "types": {
                 "footway": {
                     "stroke": "#3d393d",
