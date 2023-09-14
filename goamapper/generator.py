@@ -42,7 +42,7 @@ class Generator():
         log.debug(
             f"Generating {self.poster.dir_name} in {self.poster.poster_name}")
 
-        if self.svg_file_path.exists() and not self.overwrite:
+        if self.png_file_path.exists() and not self.overwrite:
             log.info(
                 f"{self.poster.dir_name} in {self.poster.poster_name} already exists")
 
