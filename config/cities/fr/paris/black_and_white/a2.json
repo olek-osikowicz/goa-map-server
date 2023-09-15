@@ -69,12 +69,8 @@
             }
         },
         "streets": {
-            "base_width": 1.333,
+            "base_width": 1.5,
             "types": {
-                "footway": {
-                    "stroke": "#2e2d2d",
-                    "relative_width": 1
-                },
                 "pedestrian": {
                     "stroke": "#2e2d2d",
                     "relative_width": 2
@@ -103,15 +99,7 @@
                     "stroke": "#0a0a0a",
                     "relative_width": 3.5
                 },
-                "tertiary_link": {
-                    "stroke": "#0a0a0a",
-                    "relative_width": 3.5
-                },
                 "secondary": {
-                    "stroke": "#0a0a0a",
-                    "relative_width": 4
-                },
-                "secondary_link": {
                     "stroke": "#0a0a0a",
                     "relative_width": 4
                 },
@@ -119,19 +107,27 @@
                     "stroke": "#0a0a0a",
                     "relative_width": 4.5
                 },
-                "primary_link": {
-                    "stroke": "#0a0a0a",
-                    "relative_width": 4.5
-                },
                 "trunk": {
                     "stroke": "#0a0a0a",
                     "relative_width": 5
                 },
-                "trunk_link": {
+                "motorway": {
                     "stroke": "#0a0a0a",
                     "relative_width": 5
                 },
-                "motorway": {
+                "tertiary_link": {
+                    "stroke": "#0a0a0a",
+                    "relative_width": 3.5
+                },
+                "secondary_link": {
+                    "stroke": "#0a0a0a",
+                    "relative_width": 4
+                },
+                "primary_link": {
+                    "stroke": "#0a0a0a",
+                    "relative_width": 4.5
+                },
+                "trunk_link": {
                     "stroke": "#0a0a0a",
                     "relative_width": 5
                 },

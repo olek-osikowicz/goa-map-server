@@ -71,10 +71,6 @@
         "streets": {
             "base_width": 1,
             "types": {
-                "footway": {
-                    "stroke": "#b38872",
-                    "relative_width": 1
-                },
                 "pedestrian": {
                     "stroke": "#b38872",
                     "relative_width": 2
@@ -103,15 +99,7 @@
                     "stroke": "#b38872",
                     "relative_width": 3.5
                 },
-                "tertiary_link": {
-                    "stroke": "#b38872",
-                    "relative_width": 3.5
-                },
                 "secondary": {
-                    "stroke": "#b38872",
-                    "relative_width": 4
-                },
-                "secondary_link": {
                     "stroke": "#b38872",
                     "relative_width": 4
                 },
@@ -119,19 +107,27 @@
                     "stroke": "#b38872",
                     "relative_width": 4.5
                 },
-                "primary_link": {
-                    "stroke": "#b38872",
-                    "relative_width": 4.5
-                },
                 "trunk": {
                     "stroke": "#b38872",
                     "relative_width": 5
                 },
-                "trunk_link": {
+                "motorway": {
                     "stroke": "#b38872",
                     "relative_width": 5
                 },
-                "motorway": {
+                "tertiary_link": {
+                    "stroke": "#b38872",
+                    "relative_width": 3.5
+                },
+                "secondary_link": {
+                    "stroke": "#b38872",
+                    "relative_width": 4
+                },
+                "primary_link": {
+                    "stroke": "#b38872",
+                    "relative_width": 4.5
+                },
+                "trunk_link": {
                     "stroke": "#b38872",
                     "relative_width": 5
                 },
