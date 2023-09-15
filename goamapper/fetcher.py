@@ -1,6 +1,8 @@
 # import prettymaps
 import osmnx as ox
+import requests
 from shapely.geometry import (
+    shape,
     box,
     Point,
     Polygon,
@@ -93,6 +95,34 @@ class Fetcher():
         if scale:
             osm_gdf = self.scaleToPoster(osm_gdf)
         return osm_gdf
+
+    def get_f1GDF(self, name):
+
+        circut=f'wr["name"="{name}"];'
+        url = "https://maps.mail.ru/osm/tools/overpass/api/interpreter"
+        query = f"""[out:json];
+            {circut}
+            convert item ::=::,::geom=geom(),_osm_type=type();
+            out geom;"""
+        response = requests.get(url, params={'data': query})
+        data = response.json()
+        results_dict = [{
+            'name': element['tags']['name'],
+            'geometry': shape(element['geometry']),
+        } for element in data['elements']]
+
+        gdf = gpd.GeoDataFrame(results_dict)
+        gdf = gdf.reset_index()[['geometry']]
+        gdf = gdf.explode(index_parts=False)
+        gdf = gdf[gdf.geom_type == 'LineString']
+        gdf = gdf.drop_duplicates()
+        gdf = gdf.set_crs("EPSG:4326")
+        gdf = gdf.to_crs("EPSG:3857")
+        gdf = self.scaleToPoster(gdf)
+
+        return gdf
+
+
 
     def scaleToPoster(self, gdf):
 
