@@ -3,7 +3,7 @@
         7.410978,
         43.723066,
         7.435038,
-        43.748170
+        43.74817
     ],
     "dir_name": "f1_monaco",
     "poster_name": "red_white_black b2",
@@ -116,6 +116,26 @@
                     "relative_width": 5
                 },
                 "motorway": {
+                    "stroke": "#0a0a0a",
+                    "relative_width": 5
+                },
+                "tertiary_link": {
+                    "stroke": "#0a0a0a",
+                    "relative_width": 3.5
+                },
+                "secondary_link": {
+                    "stroke": "#0a0a0a",
+                    "relative_width": 4
+                },
+                "primary_link": {
+                    "stroke": "#0a0a0a",
+                    "relative_width": 4.5
+                },
+                "trunk_link": {
+                    "stroke": "#0a0a0a",
+                    "relative_width": 5
+                },
+                "motorway_link": {
                     "stroke": "#0a0a0a",
                     "relative_width": 5
                 }

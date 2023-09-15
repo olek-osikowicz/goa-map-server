@@ -2,7 +2,7 @@
     "bbox": [
         -46.708303,
         -23.712621,
-        -46.685510,
+        -46.68551,
         -23.688806
     ],
     "dir_name": "f1_interlagos",
@@ -118,11 +118,31 @@
                 "motorway": {
                     "stroke": "#cccc66",
                     "relative_width": 5
+                },
+                "tertiary_link": {
+                    "stroke": "#cccc66",
+                    "relative_width": 3.5
+                },
+                "secondary_link": {
+                    "stroke": "#cccc66",
+                    "relative_width": 4
+                },
+                "primary_link": {
+                    "stroke": "#cccc66",
+                    "relative_width": 4.5
+                },
+                "trunk_link": {
+                    "stroke": "#cccc66",
+                    "relative_width": 5
+                },
+                "motorway_link": {
+                    "stroke": "#cccc66",
+                    "relative_width": 5
                 }
             }
         },
         "circut": {
-            "name": "Autódromo José Carlos Pace",
+            "name": "Aut\u00f3dromo Jos\u00e9 Carlos Pace",
             "stroke": "#aa0909",
             "stroke_width": 35
         }

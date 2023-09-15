@@ -118,6 +118,26 @@
                 "motorway": {
                     "stroke": "#cccc66",
                     "relative_width": 5
+                },
+                "tertiary_link": {
+                    "stroke": "#cccc66",
+                    "relative_width": 3.5
+                },
+                "secondary_link": {
+                    "stroke": "#cccc66",
+                    "relative_width": 4
+                },
+                "primary_link": {
+                    "stroke": "#cccc66",
+                    "relative_width": 4.5
+                },
+                "trunk_link": {
+                    "stroke": "#cccc66",
+                    "relative_width": 5
+                },
+                "motorway_link": {
+                    "stroke": "#cccc66",
+                    "relative_width": 5
                 }
             }
         },
