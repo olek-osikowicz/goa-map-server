@@ -170,7 +170,7 @@ class Generator():
                         drawWays(gdf, layer_info, id=layer_name))
                     
                 case "circut":
-                    gdf = self.fetcher.get_f1GDF(layer_info['name'])
+                    gdf = self.fetcher.get_f1GDF(layer_info['selector'])
                     self.map_content.append(
                         drawCircut(gdf, layer_info)
                     )

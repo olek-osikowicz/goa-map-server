@@ -142,7 +142,7 @@
             }
         },
         "circut": {
-            "name": "Hungaroring",
+            "selector": "way(id:231328650);",
             "stroke": "#31d25b",
             "stroke_width": 35
         }

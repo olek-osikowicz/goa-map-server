@@ -96,12 +96,12 @@ class Fetcher():
             osm_gdf = self.scaleToPoster(osm_gdf)
         return osm_gdf
 
-    def get_f1GDF(self, name):
+    def get_f1GDF(self, selector):
 
-        circut=f'wr["name"="{name}"];'
+        # circut=f'wr["name"="{name}"];'
         url = "https://maps.mail.ru/osm/tools/overpass/api/interpreter"
         query = f"""[out:json];
-            {circut}
+            {selector}
             convert item ::=::,::geom=geom(),_osm_type=type();
             out geom;"""
         response = requests.get(url, params={'data': query})
