@@ -142,7 +142,7 @@
             }
         },
         "circut": {
-            "selector": "Baku City Circuit",
+            "selector": "wr[\"name\"=\"Baku City Circuit\"];",
             "style": {
                 "stroke": "#a62929",
                 "stroke_width": 25
