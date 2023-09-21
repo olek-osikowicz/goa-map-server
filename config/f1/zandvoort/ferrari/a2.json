@@ -143,8 +143,10 @@
         },
         "circut": {
             "selector": "Grand Prix Formule 1 van Nederland",
-            "stroke": "#f6d429",
-            "stroke_width": 25
+            "style": {
+                "stroke": "#f6d429",
+                "stroke_width": 25
+            }
         }
     }
 }

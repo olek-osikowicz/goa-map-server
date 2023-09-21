@@ -143,8 +143,10 @@
         },
         "circut": {
             "selector": "\u9234\u9e7f\u30b5\u30fc\u30ad\u30c3\u30c8",
-            "stroke": "#7f0202",
-            "stroke_width": 25
+            "style": {
+                "stroke": "#7f0202",
+                "stroke_width": 25
+            }
         }
     }
 }

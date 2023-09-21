@@ -143,8 +143,10 @@
         },
         "circut": {
             "selector": "Silverstone Grand Prix",
-            "stroke": "#f6d429",
-            "stroke_width": 30
+            "style": {
+                "stroke": "#f6d429",
+                "stroke_width": 30
+            }
         }
     }
 }

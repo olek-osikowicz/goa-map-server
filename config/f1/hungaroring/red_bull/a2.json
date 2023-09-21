@@ -143,8 +143,10 @@
         },
         "circut": {
             "selector": "way(id:231328650);",
-            "stroke": "#aa0909",
-            "stroke_width": 25
+            "style": {
+                "stroke": "#aa0909",
+                "stroke_width": 25
+            }
         }
     }
 }

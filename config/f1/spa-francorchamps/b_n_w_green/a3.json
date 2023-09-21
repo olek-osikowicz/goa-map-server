@@ -143,8 +143,10 @@
         },
         "circut": {
             "selector": "Circuit de Spa Francorchamps",
-            "stroke": "#366c2e",
-            "stroke_width": 20
+            "style": {
+                "stroke": "#366c2e",
+                "stroke_width": 20
+            }
         }
     }
 }

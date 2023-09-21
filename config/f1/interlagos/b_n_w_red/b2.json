@@ -143,8 +143,10 @@
         },
         "circut": {
             "selector": "Aut\u00f3dromo Jos\u00e9 Carlos Pace",
-            "stroke": "#a62929",
-            "stroke_width": 30
+            "style": {
+                "stroke": "#a62929",
+                "stroke_width": 30
+            }
         }
     }
 }

@@ -143,8 +143,10 @@
         },
         "circut": {
             "selector": "Autodromo Nazionale di Monza",
-            "stroke": "#a62929",
-            "stroke_width": 25
+            "style": {
+                "stroke": "#a62929",
+                "stroke_width": 25
+            }
         }
     }
 }

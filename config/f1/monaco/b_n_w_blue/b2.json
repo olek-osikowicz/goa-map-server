@@ -143,8 +143,10 @@
         },
         "circut": {
             "selector": "Circuit de Monaco",
-            "stroke": "#2c1e7c",
-            "stroke_width": 30
+            "style": {
+                "stroke": "#2c1e7c",
+                "stroke_width": 30
+            }
         }
     }
 }
