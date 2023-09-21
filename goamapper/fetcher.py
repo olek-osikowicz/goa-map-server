@@ -107,7 +107,6 @@ class Fetcher():
         response = requests.get(url, params={'data': query})
         data = response.json()
         results_dict = [{
-            'name': element['tags']['name'],
             'geometry': shape(element['geometry']),
         } for element in data['elements']]
 
