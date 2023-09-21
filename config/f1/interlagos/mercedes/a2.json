@@ -142,7 +142,7 @@
             }
         },
         "circut": {
-            "selector": "Aut\u00f3dromo Jos\u00e9 Carlos Pace",
+            "selector": "r(id:6781071);",
             "style": {
                 "stroke": "#40c8ae",
                 "stroke_width": 25
