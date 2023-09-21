@@ -142,7 +142,7 @@
             }
         },
         "circut": {
-            "selector": "r(id:6781071);",
+            "selector": "relation(id:6781071);",
             "style": {
                 "stroke": "#7f0202",
                 "stroke_width": 25
