@@ -142,7 +142,7 @@
             }
         },
         "circut": {
-            "name": "\u9234\u9e7f\u30b5\u30fc\u30ad\u30c3\u30c8",
+            "selector": "\u9234\u9e7f\u30b5\u30fc\u30ad\u30c3\u30c8",
             "stroke": "#366c2e",
             "stroke_width": 20
         }

@@ -142,7 +142,7 @@
             }
         },
         "circut": {
-            "name": "Albert Park Circuit",
+            "selector": "Albert Park Circuit",
             "stroke": "#40c8ae",
             "stroke_width": 25
         }

@@ -142,7 +142,7 @@
             }
         },
         "circut": {
-            "name": "Aut\u00f3dromo Jos\u00e9 Carlos Pace",
+            "selector": "Aut\u00f3dromo Jos\u00e9 Carlos Pace",
             "stroke": "#7f0202",
             "stroke_width": 35
         }

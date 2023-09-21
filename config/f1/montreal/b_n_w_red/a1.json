@@ -142,7 +142,7 @@
             }
         },
         "circut": {
-            "name": "Circuit Gilles-Villeneuve",
+            "selector": "Circuit Gilles-Villeneuve",
             "stroke": "#a62929",
             "stroke_width": 25
         }

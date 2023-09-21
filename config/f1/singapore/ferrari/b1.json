@@ -142,7 +142,7 @@
             }
         },
         "circut": {
-            "name": "Marina Bay Street Circuit",
+            "selector": "Marina Bay Street Circuit",
             "stroke": "#f6d429",
             "stroke_width": 50
         }
