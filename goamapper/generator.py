@@ -172,7 +172,7 @@ class Generator():
                 case "circut":
                     gdf = self.fetcher.get_f1GDF(layer_info['selector'])
                     self.map_content.append(
-                        drawCircut(gdf, layer_info)
+                        drawCircut(gdf, layer_info['style'])
                     )
 
                 case _:
