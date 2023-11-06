@@ -6,7 +6,6 @@ import drawsvg as dw
 from goamapper.drawer import drawAreas, drawWays, drawCircut
 from goamapper.models import Poster
 from goamapper.fetcher import Fetcher
-from goamapper.recolorer import recolour
 
 RENDERS_DIR = Path("renders")
 
@@ -46,7 +45,7 @@ class Generator():
             log.info(
                 f"{self.poster.dir_name} in {self.poster.poster_name} already exists")
 
-        else: #generate from scratch
+        else:  # generate from scratch
             log.info(
                 f"{self.poster.dir_name} in {self.poster.poster_name} doenst exist yet")
             self.generate_from_scratch()
@@ -168,7 +167,7 @@ class Generator():
                     gdf = self.fetcher.get_streetsGDF(street_types)
                     self.map_content.append(
                         drawWays(gdf, layer_info, id=layer_name))
-                    
+
                 case "circut":
                     gdf = self.fetcher.get_f1GDF(layer_info['selector'])
                     self.map_content.append(
@@ -178,7 +177,7 @@ class Generator():
                 case _:
                     gdf = self.fetcher.get_osmGDF(tags=layer_info['tags'],)
                     # if gdf.
-                    
+
                     self.map_content.append(
                         drawAreas(gdf, id=layer_name, fill=layer_info['fill']))
 
