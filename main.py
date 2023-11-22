@@ -54,10 +54,18 @@ async def get_map(p: Poster):
 
 
 # async def file(p: Poster):
-@app.get("/v1/map")
-async def file():
+@app.post("/v1/map")
+async def map(bbox: list[float] | None = None):
 
     with open("example_config.json", encoding="utf8") as file:
         data = json.load(file)
     p = Poster(**data)
+
+    log.info(f"Got new {bbox=}")
+    if bbox and len(bbox) == 4:
+        log.debug(f"Using new {bbox=}")
+        p.bbox = bbox
+    else:
+        log.debug("Using default bbox")
+
     return await get_map(p)
