@@ -1,4 +1,5 @@
 import re
+import time
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, Request, status
 from fastapi.exceptions import RequestValidationError
@@ -28,13 +29,10 @@ def read_root():
     return {"Hello": "World"}
 
 
-# async def file(p: Poster):
-@app.get("/v1/map")
-async def file():
+async def get_map(p: Poster):
 
-    with open("example_config.json", encoding="utf8") as file:
-        data = json.load(file)
-    p = Poster(**data)
+    start_time = time.perf_counter()
+
     g = Generator(p, overwrite=False)
     g._calculate_dimentions()
     d = dw.Drawing(*g.canvas_dims[2:], id_prefix='poster')
@@ -49,4 +47,17 @@ async def file():
     d.append(g.text_area)
     svg_str = d.as_svg()
     svg_str = delete_width_and_height(svg_str)
+
+    elapsed_time = time.perf_counter() - start_time
+    log.info(f"Time spent generating the map: {elapsed_time:.4f} seconds")
     return {"svg_string": svg_str}
+
+
+# async def file(p: Poster):
+@app.get("/v1/map")
+async def file():
+
+    with open("example_config.json", encoding="utf8") as file:
+        data = json.load(file)
+    p = Poster(**data)
+    return await get_map(p)
