@@ -64,7 +64,7 @@ async def map(bbox: list[float] | None = None):
     log.info(f"Got new {bbox=}")
     if bbox and len(bbox) == 4:
         log.debug(f"Using new {bbox=}")
-        p.bbox = bbox
+        p.area.bbox = bbox
     else:
         log.debug("Using default bbox")
 

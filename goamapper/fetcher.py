@@ -17,6 +17,8 @@ from geopandas import GeoDataFrame
 from shapely.affinity import rotate
 import logging as log
 
+from goamapper.models import Area
+
 # CONSTANS
 
 MERCATOR_CRS = "EPSG:3857"
@@ -32,9 +34,11 @@ WATER_TAGS = {
 
 
 class Fetcher():
-    def __init__(self, bbox_cords: list, map_space_dims: list) -> None:
+    def __init__(self, area: Area, map_space_dims: list) -> None:
 
         # Process bbox
+
+        bbox_cords = self.get_bbox(area)
         self.bbox_cords = bbox_cords
         log.debug(f"{bbox_cords = }")
         self.bbox_pol = box(*bbox_cords)
@@ -46,6 +50,18 @@ class Fetcher():
 
         self.map_space_dims = map_space_dims
         self.set_scale()
+
+    def get_bbox(self, a: Area):
+        if a.bbox:
+            return a.bbox
+
+        if a.latlon:
+            raise NotImplementedError(
+                "Getting bbox from latlon is not implemented")
+
+        if a.name:
+            raise NotImplementedError(
+                "Getting bbox from name not implemented yet")
 
     def mergeGeometries(self, gdf: GeoDataFrame):
         shape = gdf.geometry.unary_union

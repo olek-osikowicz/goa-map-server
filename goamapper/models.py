@@ -1,9 +1,11 @@
 from pydantic import BaseModel
 
+
 class MapFrame(BaseModel):
     fill: str
     offset: int
     width: int
+
 
 class TextBox(BaseModel):
     x: int
@@ -13,6 +15,7 @@ class TextBox(BaseModel):
     font_family: str
     fill: str
 
+
 class Template(BaseModel):
     width: int
     height: int
@@ -21,10 +24,18 @@ class Template(BaseModel):
     bottom_area_height: int
     text_boxes: list[TextBox] = None
 
-class Poster(BaseModel):
+
+class Area(BaseModel):
     bbox: list[float] = None
-    dir_name: str
+    latlon: tuple[float, float] = None
+    name: str = None
     radius: int = None
+
+
+class Poster(BaseModel):
+    # bbox: list[float] = None
+    dir_name: str
+    area: Area
     poster_name: str
     template: Template
     map_layers: dict
