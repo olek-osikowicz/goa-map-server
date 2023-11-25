@@ -31,6 +31,7 @@ WATER_TAGS = {
         "bay"
     ]
 }
+DEFAULT_RADIUS = 5000  # m
 
 
 class Fetcher():
@@ -52,16 +53,25 @@ class Fetcher():
         self.set_scale()
 
     def get_bbox(self, a: Area):
-        if a.bbox:
+        if a.bbox and len(a.bbox) == 4:
             return a.bbox
 
+        radius = a.radius if a.radius else DEFAULT_RADIUS
         if a.latlon:
-            raise NotImplementedError(
-                "Getting bbox from latlon is not implemented")
+            gdf = GeoDataFrame(
+                geometry=[Point(a.latlon[::-1])], crs=GEO_2D_CRS)
+            gdf = gdf.to_crs(MERCATOR_CRS)
+
+            gdf = gdf.buffer(radius, cap_style=3)
+
+            gdf = gdf.to_crs(GEO_2D_CRS)
+            return list(gdf.total_bounds)
 
         if a.name:
             raise NotImplementedError(
                 "Getting bbox from name not implemented yet")
+
+        raise ValueError(f"Area is not correct\n{a = }")
 
     def mergeGeometries(self, gdf: GeoDataFrame):
         shape = gdf.geometry.unary_union

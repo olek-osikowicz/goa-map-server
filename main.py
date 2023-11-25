@@ -6,7 +6,7 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from fastapi.responses import FileResponse, HTMLResponse
 from goamapper.generator import Generator
-from goamapper.models import Poster
+from goamapper.models import Area, Poster
 import logging as log
 import json
 import drawsvg as dw
@@ -50,22 +50,22 @@ async def get_map(p: Poster):
 
     elapsed_time = time.perf_counter() - start_time
     log.info(f"Time spent generating the map: {elapsed_time:.4f} seconds")
+    with open("latest.svg", "w") as f:
+        f.write(svg_str)
+
     return {"svg_string": svg_str}
 
 
 # async def file(p: Poster):
 @app.post("/v1/map")
-async def map(bbox: list[float] | None = None):
+async def map(area: Area | None = None):
 
     with open("example_config.json", encoding="utf8") as file:
         data = json.load(file)
     p = Poster(**data)
 
-    log.info(f"Got new {bbox=}")
-    if bbox and len(bbox) == 4:
-        log.debug(f"Using new {bbox=}")
-        p.area.bbox = bbox
-    else:
-        log.debug("Using default bbox")
+    log.info(f"Got new {area=}")
+    if area:
+        p.area = area
 
     return await get_map(p)
