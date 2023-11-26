@@ -1,4 +1,4 @@
-.svg
+*.svg
 .vscode/
 __pycache__/
 archives/
