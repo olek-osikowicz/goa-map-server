@@ -1,15 +1,13 @@
 FROM python:3.11
 
-# download water polygons
+# download water polygons and put it in assets directory
 RUN mkdir /assets
-
 RUN wget -P ./assets https://osmdata.openstreetmap.de/download/water-polygons-split-4326.zip 
-
 RUN unzip ./assets/water-polygons-split-4326.zip -d ./assets
 
 COPY . .
 
-RUN pip install --no-cache-dir --upgrade "fastapi[all]" osmnx drawsvg
+RUN pip install --no-cache-dir --upgrade -r "requirementst.txt"
 
 EXPOSE 8000
 
