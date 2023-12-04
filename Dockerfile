@@ -7,7 +7,7 @@ RUN unzip ./assets/water-polygons-split-4326.zip -d ./assets
 
 COPY . .
 
-RUN pip install --no-cache-dir --upgrade -r "requirementst.txt"
+RUN pip install --no-cache-dir --upgrade -r "requirements.txt"
 
 EXPOSE 8000
 
