@@ -13,7 +13,7 @@ import drawsvg as dw
 from pydantic import BaseModel
 
 log.basicConfig(
-    format='%(levelname)s:%(asctime)s: %(message)s', level=log.INFO)
+    format='%(levelname)s:%(asctime)s: %(message)s', level=log.DEBUG)
 
 app = FastAPI()
 

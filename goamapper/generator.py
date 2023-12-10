@@ -108,11 +108,12 @@ class Generator():
         self.template = template
 
     def create_map_content(self):
-        log.info("Creating map content")
 
+        log.info("Creating map content")
         self.map_content = dw.Group(id='map')
         self.fetcher = Fetcher(self.poster.area, self.map_space_dims)
 
+        # TODO: make it asyncronous
         for layer_name, layer_info in self.poster.map_layers.items():
             log.info(f"Creating layer: {layer_name}")
 
@@ -138,8 +139,9 @@ class Generator():
                     )
 
                 case _:
+
+                    log.debug(f"Default case hit with {layer_name}")
                     gdf = self.fetcher.get_osmGDF(tags=layer_info['tags'],)
-                    # if gdf.
 
                     self.map_content.append(
                         drawAreas(gdf, id=layer_name, fill=layer_info['fill']))

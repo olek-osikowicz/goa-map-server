@@ -41,7 +41,7 @@ class Fetcher():
 
         bbox_cords = self.get_bbox(area)
         self.bbox_cords = bbox_cords
-        log.debug(f"{bbox_cords = }")
+        log.debug(f"Bounding box coordinates: {bbox_cords}")
         self.bbox_pol = box(*bbox_cords)
         self.bbox_gdf = GeoDataFrame(geometry=[self.bbox_pol],
                                      crs=GEO_2D_CRS).to_crs(MERCATOR_CRS)
