@@ -63,14 +63,8 @@ class Generator():
         # whole page dimentions
         self.canvas_dims = [0, 0, t.width, t.height]
 
-        # dimentions of frame around map space
-        frame_offset = t.map_frame.offset
-        self.frame_dims = [frame_offset, frame_offset,  # x, y
-                           t.width-2*frame_offset,  # w
-                           t.height-(2*frame_offset)-t.bottom_area_height]  # h
-
         # dimentions of map space
-        map_space_offset = frame_offset + t.map_frame.width
+        map_space_offset = t.map_offset
         self.map_space_dims = [map_space_offset, map_space_offset,
                                t.width-(2*map_space_offset),
                                t.height-(2*map_space_offset)-t.bottom_area_height]
@@ -107,14 +101,9 @@ class Generator():
         bg = dw.Rectangle(*self.canvas_dims, id='bg',
                           fill=t.background_fill)
 
-        # create frame
-        tf = dw.Rectangle(*self.frame_dims, id='frame',
-                          fill=t.map_frame.fill)
-
         # CREATE TEMPLATE AND APPEND
         template = dw.Group(id='template', mask=map_space_mask)
         template.append(bg)
-        template.append(tf)
 
         self.template = template
 

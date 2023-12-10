@@ -13,11 +13,7 @@
         "width": 4960,
         "height": 7016,
         "background_fill": "#f3f3f3",
-        "map_frame": {
-            "fill": "#f3f3f3",
-            "offset": 150,
-            "width": 0
-        },
+        "map_offset": 150,
         "bottom_area_height": 400,
         "text_boxes": [
             {
