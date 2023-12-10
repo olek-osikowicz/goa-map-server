@@ -15,26 +15,10 @@ class Generator():
         self.poster = poster
         self.overwrite = overwrite
 
-        # self.map_layers_params = config['map_layers']
-
-        self.prepare_folders()
-
         # only used if generating from scratch
         self.fetcher = None
         self.map_content = None
         self.template = None
-
-    def prepare_folders(self):
-        dir_path = RENDERS_DIR / self.poster.dir_name
-        dir_path.mkdir(exist_ok=True)  # ensure directory exists
-
-        svg_dir_path = dir_path / 'svg'
-        svg_dir_path.mkdir(exist_ok=True)
-        self.svg_file_path = svg_dir_path / f"{self.poster.poster_name}.svg"
-
-        png_dir_path = dir_path / 'png'
-        png_dir_path.mkdir(exist_ok=True)
-        self.png_file_path = png_dir_path / f"{self.poster.poster_name}.png"
 
     def generate_svg(self):
 
@@ -75,10 +59,9 @@ class Generator():
     def _calculate_dimentions(self):
 
         t = self.poster.template
-        t.map_frame.width
 
         # whole page dimentions
-        self.canvas_dims = [0, 0, t.width, t.height,]
+        self.canvas_dims = [0, 0, t.width, t.height]
 
         # dimentions of frame around map space
         frame_offset = t.map_frame.offset
@@ -96,15 +79,12 @@ class Generator():
         # TEXTS
         self.text_area = dw.Group(id='text_area')
 
-        for tb in self.poster.template.text_boxes:
+        for tb_params in self.poster.template.text_boxes:
 
             self.text_area.append(dw.Text(
-                text=tb.text,
-                x=tb.x,
-                y=tb.y,
-                fill=tb.fill,
-                font_size=tb.font_size,
-                font_family=tb.font_family,
+                # passes all parameters of a text box: position text fill and font
+                **dict(tb_params),
+                # helps easier positioning
                 dominant_baseline='hanging',
                 text_anchor='middle'
             ))
