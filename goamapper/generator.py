@@ -11,52 +11,15 @@ RENDERS_DIR = Path("renders")
 
 
 class Generator():
-    def __init__(self, poster: Poster, overwrite: bool = False) -> None:
+    def __init__(self, poster: Poster) -> None:
         self.poster = poster
-        self.overwrite = overwrite
 
         # only used if generating from scratch
         self.fetcher = None
         self.map_content = None
         self.template = None
 
-    def generate_svg(self):
-
-        log.debug(
-            f"Generating {self.poster.dir_name} in {self.poster.poster_name}")
-
-        if self.png_file_path.exists() and not self.overwrite:
-            log.info(
-                f"{self.poster.dir_name} in {self.poster.poster_name} already exists")
-
-        else:  # generate from scratch
-            log.info(
-                f"{self.poster.dir_name} in {self.poster.poster_name} doenst exist yet")
-            self.generate_from_scratch()
-
-    def save_png(self, max_size: int | None = None):
-
-        if self.png_file_path.exists() and not self.overwrite:
-            log.debug("PNG file already exists")
-            return
-        log.info(f"Saving png to {self.png_file_path}")
-        w = self.poster.template.width
-        h = self.poster.template.height
-
-        if max_size:
-            scale = max(w, h)/max_size
-            w /= scale
-            h /= scale
-
-        subprocess.run(args=["inkscape",
-                             "-w", str(int(w)),
-                             "-h", str(int(h)),
-                             "-o",
-                             str(self.png_file_path),
-                             str(self.svg_file_path)
-                             ], capture_output=True)
-
-    def _calculate_dimentions(self):
+    def _calculate_map_dimentions(self):
 
         t = self.poster.template
 
@@ -151,7 +114,7 @@ class Generator():
     def generate_from_scratch(self):
         log.info("Generating from scratch")
 
-        self._calculate_dimentions()
+        self._calculate_map_dimentions()
         d = dw.Drawing(*self.canvas_dims[2:], id_prefix='poster')
 
         self.create_map_content()
@@ -165,7 +128,5 @@ class Generator():
 
         d.save_svg(self.svg_file_path)
         log.debug("SVG saved")
-        # d.save_png(self.png_file_path.__str__())
-        # log.debug("PNG saved")
 
         log.info("Map saved")

@@ -33,8 +33,8 @@ async def get_map(p: Poster):
 
     start_time = time.perf_counter()
 
-    g = Generator(p, overwrite=False)
-    g._calculate_dimentions()
+    g = Generator(p)
+    g._calculate_map_dimentions()
     d = dw.Drawing(*g.canvas_dims[2:], id_prefix='poster')
 
     g.create_map_content()

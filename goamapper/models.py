@@ -28,7 +28,6 @@ class Area(BaseModel):
 
 class Poster(BaseModel):
     # bbox: list[float] = None
-    dir_name: str
     area: Area
     poster_name: str
     template: Template
