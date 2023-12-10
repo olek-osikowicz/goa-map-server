@@ -34,17 +34,7 @@ async def get_map(p: Poster):
     start_time = time.perf_counter()
 
     g = Generator(p)
-    g._calculate_map_dimentions()
-    d = dw.Drawing(*g.canvas_dims[2:], id_prefix='poster')
-
-    g.create_map_content()
-    d.append(g.map_content)
-
-    g.create_template()
-    d.append(g.template)
-
-    g.create_text_area()
-    d.append(g.text_area)
+    d = g.create_map()
     svg_str = d.as_svg()
     svg_str = delete_width_and_height(svg_str)
 
