@@ -107,16 +107,10 @@ class Generator():
 
         self.template = template
 
-    def _init_map_content(self):
-
-        # clip mam content
-        clip = dw.ClipPath()
-        clip.append(dw.Rectangle(*self.map_space_dims))
-        self.map_content = dw.Group(id='map', stroke='none', clip_path=clip)
-
     def create_map_content(self):
         log.info("Creating map content")
-        self._init_map_content()
+
+        self.map_content = dw.Group(id='map')
         self.fetcher = Fetcher(self.poster.area, self.map_space_dims)
 
         for layer_name, layer_info in self.poster.map_layers.items():
