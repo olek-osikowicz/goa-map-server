@@ -40,7 +40,9 @@ async def get_map(p: Poster):
 
     elapsed_time = time.perf_counter() - start_time
     log.info(f"Time spent generating the map: {elapsed_time:.4f} seconds")
-    with open("latest.svg", "w") as f:
+
+    # TODO use ENV variable
+    with open("renders/latest.svg", "w") as f:
         f.write(svg_str)
 
     return {"svg_string": svg_str}
