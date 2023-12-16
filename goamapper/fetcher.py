@@ -31,42 +31,47 @@ WATER_TAGS = {
         "bay"
     ]
 }
-DEFAULT_RADIUS = 5000  # m
+DEFAULT_RADIUS = 5_000  # m
 
 
 class Fetcher():
     def __init__(self, area: Area, map_space_dims: list) -> None:
 
-        # Process bbox
+        # parse are a
+        self.bbox_cords = self.get_bbox(area)  # in GEO 2D
+        log.debug(f"Bounding box coordinates: {self.bbox_cords}")
+        self.bbox_pol = box(*self.bbox_cords)
+        mercator_bbox_gdf = GeoDataFrame(geometry=[self.bbox_pol],
+                                         crs=GEO_2D_CRS).to_crs(MERCATOR_CRS)
 
-        bbox_cords = self.get_bbox(area)
-        self.bbox_cords = bbox_cords
-        log.debug(f"Bounding box coordinates: {bbox_cords}")
-        self.bbox_pol = box(*bbox_cords)
-        self.bbox_gdf = GeoDataFrame(geometry=[self.bbox_pol],
-                                     crs=GEO_2D_CRS).to_crs(MERCATOR_CRS)
-
-        self.mercator_bbox = self.bbox_gdf.total_bounds
-        self.centroid_mercator = self.bbox_gdf.geometry.centroid.iloc[0]
+        self.mercator_bbox = mercator_bbox_gdf.total_bounds
+        self.centroid_mercator = mercator_bbox_gdf.geometry.centroid.iloc[0]
 
         self.map_space_dims = map_space_dims
         self.set_scale()
 
     def get_bbox(self, a: Area):
         if a.bbox and len(a.bbox) == 4:
+            log.debug(f"Using given bbox {a.bbox}")
             return a.bbox
 
+        # use given radius if there is one else use the default
         radius = a.radius if a.radius else DEFAULT_RADIUS
+
+        # if a point is given get square bbox around the points
         if a.latlon:
+            log.debug(f"Getting bbox from point {a.latlon}")
             gdf = GeoDataFrame(
                 geometry=[Point(a.latlon[::-1])], crs=GEO_2D_CRS)
             gdf = gdf.to_crs(MERCATOR_CRS)
 
+            # square around the point of side 2r
             gdf = gdf.buffer(radius, cap_style=3)
 
             gdf = gdf.to_crs(GEO_2D_CRS)
             return list(gdf.total_bounds)
 
+        # if just a name is give query the center and calculate bbox of that
         if a.name:
             raise NotImplementedError(
                 "Getting bbox from name not implemented yet")
