@@ -5,8 +5,11 @@ RUN mkdir /assets
 RUN wget -P ./assets https://osmdata.openstreetmap.de/download/water-polygons-split-4326.zip 
 RUN unzip ./assets/water-polygons-split-4326.zip -d ./assets
 
+#install requirements
+COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir --upgrade -r "requirements.txt"
 
+#copy rest of the code
 COPY . .
 
 EXPOSE 8000
