@@ -116,7 +116,7 @@ class Fetcher():
 
         try:
             osm_gdf = ox.features_from_polygon(
-                self.bbox_pol, tags=tags)
+                self.bbox_pol, tags)
         except Exception:
             # return empty geometry if something goes wrong
             return gpd.GeoSeries([])
