@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from pathlib import Path
 import logging as log
-from multiprocessing import Pool
+import subprocess
 import drawsvg as dw
 from goamapper.drawer import drawAreas, drawWays, drawCircut
 from goamapper.models import Poster
@@ -72,45 +72,42 @@ class Generator():
 
         log.info("Creating map content")
         map_content = dw.Group(id='map')
-        self.fetcher = Fetcher(self.poster.area, self.canvas_dims)
+        fetcher = Fetcher(self.poster.area, self.map_space_dims)
 
         # TODO: make it asyncronous
+        for layer_name, layer_info in self.poster.map_layers.items():
+            log.info(f"Creating layer: {layer_name}")
 
-        with Pool() as pool:
-            layers = pool.starmap(self._get_map_layer,
-                                  self.poster.map_layers.items())
-            map_content.extend(layers)
+            match layer_name:
+                case "land":  # land is a background
+                    map_content.append(dw.Rectangle(id='land',
+                                                    *self.canvas_dims,  fill=layer_info['fill']))
 
-        # for layer_name, layer_info in self.poster.map_layers.items():
-        #     map_content.append(self._get_map_layer(layer_name, layer_info))
+                case "water":  # water must be specially treated
+                    map_content.append(
+                        drawAreas(fetcher.get_waterGDF(),
+                                  id='water', fill=layer_info['fill']))
+
+                case "streets":  # streets and other ways
+                    street_types = list(layer_info['types'].keys())
+                    gdf = fetcher.get_streetsGDF(street_types)
+                    map_content.append(
+                        drawWays(gdf, layer_info, id=layer_name))
+
+                case "circut":
+                    gdf = fetcher.get_f1GDF(layer_info['selector'])
+                    map_content.append(
+                        drawCircut(gdf, layer_info['style']))
+
+                case _:
+                    log.debug(f"Default case hit with {layer_name}")
+                    gdf = fetcher.get_osmGDF(tags=layer_info['tags'],)
+
+                    map_content.append(
+                        drawAreas(gdf, id=layer_name, fill=layer_info['fill']))
 
         log.info("Map content genarated")
         return map_content
-
-    def _get_map_layer(self, layer_name, layer_info) -> dw.Group:
-        log.info(f"Creating layer: {layer_name}")
-        match layer_name:
-            case "land":  # land is a background
-                return dw.Rectangle(id='land',
-                                    *self.canvas_dims,  fill=layer_info['fill'])
-
-            case "water":  # water must be specially treated
-                return drawAreas(self.fetcher.get_waterGDF(), id='water', fill=layer_info['fill'])
-
-            case "streets":  # streets and other ways
-                street_types = list(layer_info['types'].keys())
-                gdf = self.fetcher.get_streetsGDF(street_types)
-                return drawWays(gdf, layer_info, id=layer_name)
-
-            case "circut":
-                gdf = self.fetcher.get_f1GDF(layer_info['selector'])
-                return drawCircut(gdf, layer_info['style'])
-
-            case _:
-                log.debug(f"Default case hit with {layer_name}")
-                gdf = self.fetcher.get_osmGDF(tags=layer_info['tags'],)
-
-                return drawAreas(gdf, id=layer_name, fill=layer_info['fill'])
 
     def create_map(self) -> dw.Drawing:
         log.info("Starting creating map")
