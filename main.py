@@ -80,7 +80,7 @@ async def greenery(area: Area | None = None):
 
 
 @app.post("/v2/water")
-async def greenery(area: Area | None = None):
+async def water(area: Area | None = None):
     return await generate(Generator.generate_water_paths, area)
 
 
@@ -97,6 +97,25 @@ async def generate(gen_func, area):
 
     # TODO use ENV variable
     with open(f"renders/{gen_func.__name__}.txt", "w") as f:
+        f.write(ret)
+
+    return ret
+
+
+@app.post("/v3/paths")
+async def paths(layer_name: str = "greenery"):
+    start_time = time.perf_counter()
+
+    # if not area:
+    area = DEFAULT_AREA
+
+    ret = Generator.generate_paths(layer_name, area, DEFAULT_CANVAS_DIMS)
+    elapsed_time = time.perf_counter() - start_time
+
+    log.info(
+        f"Generating paths for {layer_name} took {elapsed_time:.4f} seconds")
+
+    with open(f"renders/{layer_name}.txt", "w") as f:
         f.write(ret)
 
     return ret

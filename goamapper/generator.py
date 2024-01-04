@@ -123,6 +123,33 @@ class Generator():
         log.info("Map created!")
         return d
 
+    def generate_paths(layer_name, area, canvas_dims) -> str:
+        log.info(f"Fetching {layer_name}")
+        fetcher = Fetcher(area, canvas_dims)
+        match layer_name:
+            case "water":
+                gdf = fetcher.get_waterGDF()
+            case "greenery":
+                GREENERY_TAGS = {
+                    "leisure": "park",
+                    "landuse": [
+                        "forest",
+                        "village_green"
+                    ],
+                    "natural": "wood"
+                }
+                gdf = fetcher.get_osmGDF(tags=GREENERY_TAGS)
+            case "pier":
+                PIER_TAGS = {
+                    "man_made": "pier"
+                }
+                gdf = fetcher.get_osmGDF(tags=PIER_TAGS)
+            case _:
+                raise ValueError(f"{layer_name =} is unknown")
+
+        log.info(f"Drawing {layer_name} paths")
+        return drawPaths(gdf)
+
     def generate_greenery_paths(area, canvas_dims) -> str:
 
         log.info("Generating greenery paths")
