@@ -102,20 +102,25 @@ async def generate(gen_func, area):
     return ret
 
 
+class Paths(BaseModel):
+    layer_name: str
+    area: Area | None = None
+
+
 @app.post("/v3/paths")
-async def paths(layer_name: str = "greenery"):
+async def paths(p: Paths):
     start_time = time.perf_counter()
 
-    # if not area:
-    area = DEFAULT_AREA
+    if not p.area:
+        p.area = DEFAULT_AREA
 
-    ret = Generator.generate_paths(layer_name, area, DEFAULT_CANVAS_DIMS)
+    ret = Generator.generate_paths(p.layer_name, p.area, DEFAULT_CANVAS_DIMS)
     elapsed_time = time.perf_counter() - start_time
 
     log.info(
-        f"Generating paths for {layer_name} took {elapsed_time:.4f} seconds")
+        f"Generating paths for {p.layer_name} took {elapsed_time:.4f} seconds")
 
-    with open(f"renders/{layer_name}.txt", "w") as f:
+    with open(f"renders/{p.layer_name}.txt", "w") as f:
         f.write(ret)
 
     return ret
