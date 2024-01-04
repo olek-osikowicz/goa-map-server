@@ -63,24 +63,33 @@ async def map(area: Area | None = None):
     return await get_map(p)
 
 
+# Krakow
+DEFAULT_AREA = Area(bbox=[
+    19.864953,
+    50.003372,
+    20.009857,
+    50.116317
+])
+
+DEFAULT_CANVAS_DIMS = [0, 0, 4960, 7016]
+
+
 @app.post("/v2/greenery")
 async def greenery(area: Area | None = None):
 
-    with open("example_config.json", encoding="utf8") as file:
-        data = json.load(file)
-    p = Poster(**data)
+    return await generate(Generator.generate_greenery_paths, area)
 
-    log.info(f"Got new {area=}")
-    if area:
-        p.area = area
 
+async def generate(gen_func, area):
     start_time = time.perf_counter()
 
-    g = Generator(p)
-    ret = g.generate_greenery_paths(p.area)
+    if not area:
+        area = DEFAULT_AREA
+    ret = gen_func(area, DEFAULT_CANVAS_DIMS)
 
     elapsed_time = time.perf_counter() - start_time
-    log.info(f"Time spent generating{elapsed_time:.4f} seconds")
+    log.info(
+        f"{gen_func.__name__} took {elapsed_time:.4f} seconds")
 
     # TODO use ENV variable
     with open("renders/greenery.txt", "w") as f:

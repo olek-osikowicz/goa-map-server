@@ -123,11 +123,9 @@ class Generator():
         log.info("Map created!")
         return d
 
-    def generate_greenery_paths(self, area) -> str:
+    def generate_greenery_paths(area, canvas_dims) -> str:
 
         log.info("Generating greenery paths")
-
-        canvas_dims = [0, 0, 4960, 7016]
         fetcher = Fetcher(area, canvas_dims)
         GREENERY_TAGS = {
             "leisure": "park",
