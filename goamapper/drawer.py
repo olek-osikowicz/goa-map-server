@@ -49,6 +49,30 @@ def drawAreas(gdf: GeoDataFrame, fill='blue', id='water') -> dw.Group:
     return group
 
 
+def get_path_str(p_args: dict) -> str:
+
+    content = "".join(f"{key}='{value}'" for key, value in p_args.items())
+    return f"<path {content} />\n"
+
+
+def drawPaths(gdf: GeoDataFrame) -> str:
+    paths = []
+    for geom in gdf.geometry:
+
+        p = dw.Path()
+
+        # draw exterior
+        p = drawPath(p, geom.exterior)
+
+        # draw each hole
+        for interior in geom.interiors:
+            p = drawPath(p, interior)
+
+        paths.append(get_path_str(p.args))
+
+    return "".join(paths)
+
+
 def drawCircut(gdf: GeoDataFrame, layer_info: dict):
     # width = layer_info['width']
     # stroke = layer_info['stroke']

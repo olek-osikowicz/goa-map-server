@@ -3,7 +3,7 @@ from pathlib import Path
 import logging as log
 import subprocess
 import drawsvg as dw
-from goamapper.drawer import drawAreas, drawWays, drawCircut
+from goamapper.drawer import drawAreas, drawPaths, drawWays, drawCircut
 from goamapper.models import Poster
 from goamapper.fetcher import Fetcher
 
@@ -122,3 +122,24 @@ class Generator():
         d.extend(groups)
         log.info("Map created!")
         return d
+
+    def generate_greenery_paths(self, area) -> str:
+
+        log.info("Generating greenery paths")
+
+        canvas_dims = [0, 0, 4960, 7016]
+        fetcher = Fetcher(area, canvas_dims)
+        GREENERY_TAGS = {
+            "leisure": "park",
+            "landuse": [
+                "forest",
+                "village_green"
+            ],
+            "natural": "wood"
+        }
+
+        log.info("Fetching greenery paths")
+        gdf = fetcher.get_osmGDF(tags=GREENERY_TAGS)
+
+        log.info("Drawing greenery paths")
+        return drawPaths(gdf)
