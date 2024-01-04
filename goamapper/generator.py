@@ -141,3 +141,13 @@ class Generator():
 
         log.info("Drawing greenery paths")
         return drawPaths(gdf)
+
+    def generate_water_paths(area, canvas_dims) -> str:
+
+        log.info("Generating water paths")
+        fetcher = Fetcher(area, canvas_dims)
+
+        log.info("Fetching water paths")
+        gdf = fetcher.get_waterGDF()
+        log.info("Drawing water paths")
+        return drawPaths(gdf)

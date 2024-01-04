@@ -76,8 +76,12 @@ DEFAULT_CANVAS_DIMS = [0, 0, 4960, 7016]
 
 @app.post("/v2/greenery")
 async def greenery(area: Area | None = None):
-
     return await generate(Generator.generate_greenery_paths, area)
+
+
+@app.post("/v2/water")
+async def greenery(area: Area | None = None):
+    return await generate(Generator.generate_water_paths, area)
 
 
 async def generate(gen_func, area):
