@@ -35,7 +35,7 @@ DEFAULT_RADIUS = 5_000  # m
 
 
 class Fetcher():
-    def __init__(self, area: Area, map_space_dims: list) -> None:
+    def __init__(self, area: Area, canvas_dims: list) -> None:
 
         # parse are a
         self.bbox_cords = self.get_bbox(area)  # in GEO 2D
@@ -47,7 +47,7 @@ class Fetcher():
         self.mercator_bbox = mercator_bbox_gdf.total_bounds
         self.centroid_mercator = mercator_bbox_gdf.geometry.centroid.iloc[0]
 
-        self.map_space_dims = map_space_dims
+        self.canvas_dims = canvas_dims
         self.set_scale()
 
     def get_bbox(self, a: Area):
@@ -92,10 +92,10 @@ class Fetcher():
         height = bounds[3]-bounds[1]
 
         # hole-width
-        s1 = self.map_space_dims[2]/width
+        s1 = self.canvas_dims[2]/width
 
         # hole-heigh
-        s2 = self.map_space_dims[3]/height
+        s2 = self.canvas_dims[3]/height
         self.s = max(s1, s2)
 
     def transformGDF(self, gdf: GeoDataFrame):
@@ -155,8 +155,8 @@ class Fetcher():
     def scaleToPoster(self, gdf):
 
         # center of map canvas
-        map_space_center_x = self.map_space_dims[0] + self.map_space_dims[2]/2
-        map_space_center_y = self.map_space_dims[1] + self.map_space_dims[3]/2
+        map_space_center_x = self.canvas_dims[2]/2
+        map_space_center_y = self.canvas_dims[3]/2
         log.debug(f"{map_space_center_x = }, {map_space_center_y = }")
 
         if not gdf.geometry.empty:

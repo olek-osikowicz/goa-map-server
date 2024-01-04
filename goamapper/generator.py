@@ -72,7 +72,7 @@ class Generator():
 
         log.info("Creating map content")
         map_content = dw.Group(id='map')
-        fetcher = Fetcher(self.poster.area, self.map_space_dims)
+        fetcher = Fetcher(self.poster.area, self.canvas_dims)
 
         # TODO: make it asyncronous
         for layer_name, layer_info in self.poster.map_layers.items():
