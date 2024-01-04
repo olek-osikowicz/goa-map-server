@@ -96,7 +96,7 @@ async def generate(gen_func, area):
         f"{gen_func.__name__} took {elapsed_time:.4f} seconds")
 
     # TODO use ENV variable
-    with open("renders/greenery.txt", "w") as f:
+    with open(f"renders/{gen_func.__name__}.txt", "w") as f:
         f.write(ret)
 
     return ret
