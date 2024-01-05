@@ -74,34 +74,6 @@ DEFAULT_AREA = Area(bbox=[
 DEFAULT_CANVAS_DIMS = [0, 0, 4960, 7016]
 
 
-@app.post("/v2/greenery")
-async def greenery(area: Area | None = None):
-    return await generate(Generator.generate_greenery_paths, area)
-
-
-@app.post("/v2/water")
-async def water(area: Area | None = None):
-    return await generate(Generator.generate_water_paths, area)
-
-
-async def generate(gen_func, area):
-    start_time = time.perf_counter()
-
-    if not area:
-        area = DEFAULT_AREA
-    ret = gen_func(area, DEFAULT_CANVAS_DIMS)
-
-    elapsed_time = time.perf_counter() - start_time
-    log.info(
-        f"{gen_func.__name__} took {elapsed_time:.4f} seconds")
-
-    # TODO use ENV variable
-    with open(f"renders/{gen_func.__name__}.txt", "w") as f:
-        f.write(ret)
-
-    return ret
-
-
 class Paths(BaseModel):
     layer_name: str
     area: Area | None = None
