@@ -149,32 +149,3 @@ class Generator():
 
         log.info(f"Drawing {layer_name} paths")
         return drawPaths(gdf)
-
-    def generate_greenery_paths(area, canvas_dims) -> str:
-
-        log.info("Generating greenery paths")
-        fetcher = Fetcher(area, canvas_dims)
-        GREENERY_TAGS = {
-            "leisure": "park",
-            "landuse": [
-                "forest",
-                "village_green"
-            ],
-            "natural": "wood"
-        }
-
-        log.info("Fetching greenery paths")
-        gdf = fetcher.get_osmGDF(tags=GREENERY_TAGS)
-
-        log.info("Drawing greenery paths")
-        return drawPaths(gdf)
-
-    def generate_water_paths(area, canvas_dims) -> str:
-
-        log.info("Generating water paths")
-        fetcher = Fetcher(area, canvas_dims)
-
-        log.info("Fetching water paths")
-        gdf = fetcher.get_waterGDF()
-        log.info("Drawing water paths")
-        return drawPaths(gdf)
