@@ -61,3 +61,38 @@ async def map(area: Area | None = None):
         p.area = area
 
     return await get_map(p)
+
+
+# Krakow
+DEFAULT_AREA = Area(bbox=[
+    19.864953,
+    50.003372,
+    20.009857,
+    50.116317
+])
+
+DEFAULT_CANVAS_DIMS = [0, 0, 4960, 7016]
+
+
+class Paths(BaseModel):
+    layer_name: str
+    area: Area | None = None
+
+
+@app.post("/v3/paths")
+async def paths(p: Paths):
+    start_time = time.perf_counter()
+
+    if not p.area:
+        p.area = DEFAULT_AREA
+
+    ret = Generator.generate_paths(p.layer_name, p.area, DEFAULT_CANVAS_DIMS)
+    elapsed_time = time.perf_counter() - start_time
+
+    log.info(
+        f"Generating paths for {p.layer_name} took {elapsed_time:.4f} seconds")
+
+    with open(f"renders/{p.layer_name}.txt", "w") as f:
+        f.write(ret)
+
+    return ret
