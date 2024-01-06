@@ -61,12 +61,17 @@ def drawPaths(gdf: GeoDataFrame) -> str:
 
         p = dw.Path()
 
-        # draw exterior
-        p = drawPath(p, geom.exterior)
+        if isinstance(geom, LineString):
+            p = drawPath(p, geom)
+        elif isinstance(geom, Polygon):
+            # draw exterior
+            p = drawPath(p, geom.exterior)
 
-        # draw each hole
-        for interior in geom.interiors:
-            p = drawPath(p, interior)
+            # draw each hole
+            for interior in geom.interiors:
+                p = drawPath(p, interior)
+        else:
+            ValueError("Cannot draw: type of geometry unhandled.")
 
         paths.append(get_path_str(p.args))
 

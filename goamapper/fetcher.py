@@ -203,10 +203,15 @@ class Fetcher():
 
         return gdf
 
-    def get_streetsGDF(self, street_types: list):
+    def get_streetsGDF(self, street_types: list | str):
 
         tags = {"highway": street_types}
-        gdf = ox.features_from_polygon(self.bbox_pol, tags=tags)
+
+        try:
+            gdf = ox.features_from_polygon(self.bbox_pol, tags=tags)
+        except Exception:
+            # return empty geometry if something goes wrong
+            return gpd.GeoSeries([])
 
         def unpack_lists(highway_type):
             if isinstance(highway_type, str):

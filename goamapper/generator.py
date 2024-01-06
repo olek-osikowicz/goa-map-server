@@ -126,6 +126,7 @@ class Generator():
     def generate_paths(layer_name, area, canvas_dims) -> str:
         log.info(f"Fetching {layer_name}")
         fetcher = Fetcher(area, canvas_dims)
+
         match layer_name:
             case "water":
                 gdf = fetcher.get_waterGDF()
@@ -140,10 +141,14 @@ class Generator():
                 }
                 gdf = fetcher.get_osmGDF(tags=GREENERY_TAGS)
             case "pier":
-                PIER_TAGS = {
-                    "man_made": "pier"
-                }
+                PIER_TAGS = {"man_made": "pier"}
                 gdf = fetcher.get_osmGDF(tags=PIER_TAGS)
+
+            # IS IT A STREET?
+            case _ if layer_name in ['footway', 'pedestrian', 'unclassified', 'service', 'living_street', 'residential', 'cycleway', 'tertiary',
+                                     'secondary', 'primary', 'trunk', 'motorway', 'tertiary_link', 'secondary_link', 'primary_link', 'trunk_link', 'motorway_link']:
+                gdf = fetcher.get_streetsGDF(layer_name)
+
             case _:
                 raise ValueError(f"{layer_name =} is unknown")
 
