@@ -1,3 +1,4 @@
+import asyncio
 import re
 import time
 from fastapi.middleware.cors import CORSMiddleware
@@ -79,6 +80,12 @@ class Paths(BaseModel):
     area: Area | None = None
 
 
+async def saveResult(layer_name, result):
+
+    with open(f"renders/{layer_name}.txt", "w") as f:
+        f.write(result)
+
+
 @app.post("/v3/paths")
 async def paths(p: Paths):
     start_time = time.perf_counter()
@@ -92,7 +99,6 @@ async def paths(p: Paths):
     log.info(
         f"Generating paths for {p.layer_name} took {elapsed_time:.4f} seconds")
 
-    with open(f"renders/{p.layer_name}.txt", "w") as f:
-        f.write(ret)
+    asyncio.create_task(saveResult(p.layer_name, ret))
 
     return ret
