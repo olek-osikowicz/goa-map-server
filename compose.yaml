@@ -2,6 +2,9 @@ services:
   worker:
     build: .
     ports:
-      - "8000:8000"
+      - "9000:8000"
     volumes:
       - ./renders:/renders
+networks:
+  default:
+    driver: bridge
