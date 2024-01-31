@@ -1,10 +1,22 @@
 services:
   worker:
     build: .
-    ports:
-      - "9000:8000"
+    expose:
+      - "8000"
     volumes:
       - ./renders:/renders
+    deploy:
+      replicas: 8
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - worker
+    ports:
+      - "9000:9000"
+
 networks:
   default:
     driver: bridge
