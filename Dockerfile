@@ -1,16 +1,12 @@
-FROM python:3.11
-
-# download water polygons and put it in assets directory
-RUN mkdir /assets
-RUN wget -P ./assets https://osmdata.openstreetmap.de/download/water-polygons-split-4326.zip 
-RUN unzip ./assets/water-polygons-split-4326.zip -d ./assets
-
-#install requirements
-COPY requirements.txt requirements.txt
-RUN pip install --no-cache-dir --upgrade -r "requirements.txt"
-
-#copy rest of the code
+FROM astral/uv:python3.11-bookworm-slim
+# Setup UV
 COPY . .
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Disable development dependencies
+ENV UV_NO_DEV=1
+#install requirements
+RUN uv sync --locked
+
+
+CMD ["uv", "run", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 

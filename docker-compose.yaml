@@ -5,6 +5,7 @@ services:
       - "8000"
     volumes:
       - ./renders:/renders
+      - ./assets:/assets:ro
     deploy:
       replicas: 8
     restart: unless-stopped
