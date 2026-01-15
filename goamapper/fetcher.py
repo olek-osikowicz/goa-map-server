@@ -13,7 +13,6 @@ from shapely.geometry import (
 
 from goamapper.models import Area
 
-ox.settings.overpass_url = "https://maps.mail.ru/osm/tools/overpass/api/interpreter"
 # CONSTANS
 
 MERCATOR_CRS = "EPSG:3857"
