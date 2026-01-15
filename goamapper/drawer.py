@@ -1,20 +1,10 @@
 # import prettymaps
-import osmnx as ox
-from shapely.geometry import (
-    box,
-    Point,
-    Polygon,
-    MultiPolygon,
-    LineString,
-    MultiLineString,
-    LinearRing,
-)
-import geopandas as gpd
-from geopandas import GeoDataFrame
-from shapely.affinity import rotate
-import numpy as np
 import drawsvg as dw
-import logging as log
+from geopandas import GeoDataFrame
+from shapely.geometry import (
+    LineString,
+    Polygon,
+)
 
 
 def drawPath(p: dw.Path, geom) -> dw.Path:
@@ -29,12 +19,10 @@ def drawPath(p: dw.Path, geom) -> dw.Path:
     return p
 
 
-def drawAreas(gdf: GeoDataFrame, fill='blue', id='water') -> dw.Group:
-
+def drawAreas(gdf: GeoDataFrame, fill="blue", id="water") -> dw.Group:
     group = dw.Group(id=id, fill=fill)
 
     for geom in gdf.geometry:
-
         p = dw.Path()
 
         # draw exterior
@@ -50,7 +38,6 @@ def drawAreas(gdf: GeoDataFrame, fill='blue', id='water') -> dw.Group:
 
 
 def get_path_str(p_args: dict) -> str:
-
     content = "".join(f"{key}='{value}'" for key, value in p_args.items())
     return f"<path {content} />\n"
 
@@ -58,7 +45,6 @@ def get_path_str(p_args: dict) -> str:
 def drawPaths(gdf: GeoDataFrame) -> str:
     paths = []
     for geom in gdf.geometry:
-
         p = dw.Path()
 
         if isinstance(geom, LineString):
@@ -81,8 +67,14 @@ def drawPaths(gdf: GeoDataFrame) -> str:
 def drawCircut(gdf: GeoDataFrame, layer_info: dict):
     # width = layer_info['width']
     # stroke = layer_info['stroke']
-    group = dw.Group(id="circut", fill="none", close=False,
-                     stroke_linecap='round', stroke_linejoin='round', **layer_info)
+    group = dw.Group(
+        id="circut",
+        fill="none",
+        close=False,
+        stroke_linecap="round",
+        stroke_linejoin="round",
+        **layer_info,
+    )
 
     for geom in gdf.geometry:
         p = dw.Path()
@@ -92,20 +84,27 @@ def drawCircut(gdf: GeoDataFrame, layer_info: dict):
     return group
 
 
-def drawWays(gdf: GeoDataFrame, layer_info: dict, id='ways'):
+def drawWays(gdf: GeoDataFrame, layer_info: dict, id="ways"):
+    main_group = dw.Group(
+        id=id,
+        fill="none",
+        close=False,
+        stroke_linecap="round",
+        stroke_linejoin="round",
+    )
 
-    main_group = dw.Group(id=id, fill="none", close=False,
-                          stroke_linecap='round', stroke_linejoin='round',)
-
-    base_width = layer_info['base_width']
-    for street_type, v in layer_info['types'].items():
+    base_width = layer_info["base_width"]
+    for street_type, v in layer_info["types"].items():
         # for each street type
 
-        width = base_width*v['relative_width']
+        width = base_width * v["relative_width"]
         street_group = dw.Group(
-            id=street_type, stroke=v['stroke'], stroke_width=width, )
+            id=street_type,
+            stroke=v["stroke"],
+            stroke_width=width,
+        )
 
-        street_data = gdf[gdf['way_type'] == street_type]
+        street_data = gdf[gdf["way_type"] == street_type]
 
         for geom in street_data.geometry:
             p = dw.Path()

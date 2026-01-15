@@ -1,5 +1,6 @@
 # import prettymaps
 import logging as log
+import time
 
 import geopandas as gpd
 import osmnx as ox
@@ -12,6 +13,7 @@ from shapely.geometry import (
 
 from goamapper.models import Area
 
+ox.settings.overpass_url = "https://maps.mail.ru/osm/tools/overpass/api/interpreter"
 # CONSTANS
 
 MERCATOR_CRS = "EPSG:3857"
@@ -96,11 +98,14 @@ class Fetcher:
         return gdf
 
     def get_osmGDF(self, tags, scale=True):
+        start = time.perf_counter()
         try:
             osm_gdf = ox.features_from_polygon(self.bbox_pol, tags)
         except Exception:
-            # return empty geometry if something goes wrong
+            log.error("Failed to fetch OSM data", exc_info=True)
             return gpd.GeoSeries([])
+        fetch_time = time.perf_counter() - start
+        log.info(f"Fetched OSM data in {fetch_time:.4f} seconds")
 
         osm_gdf = self.transformGDF(osm_gdf)
 
@@ -156,11 +161,12 @@ class Fetcher:
 
     def get_streetsGDF(self, street_types: list | str):
         tags = {"highway": street_types}
-
+        start_ts = time.perf_counter()
         try:
             gdf = ox.features_from_polygon(self.bbox_pol, tags=tags)
+            log.info(f"Fetched street data in {time.perf_counter() - start_ts:.3f} seconds")
         except Exception:
-            # return empty geometry if something goes wrong
+            log.error("Failed to fetch street data", exc_info=True)
             return gpd.GeoSeries([])
 
         def unpack_lists(highway_type):
